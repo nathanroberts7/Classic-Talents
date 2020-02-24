@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814C8F8724046AC700BD4D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C8F8624046AC700BD4D7E /* Main.storyboard */; };
+		814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */; };
+		814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8B24046B8500BD4D7E /* TalentCell.swift */; };
+		814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8C24046B8500BD4D7E /* TalentViewController.swift */; };
 		819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B632403C19B00518FFB /* AppDelegate.swift */; };
 		819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B652403C19B00518FFB /* SceneDelegate.swift */; };
 		819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6C2403C19C00518FFB /* Assets.xcassets */; };
 		819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */; };
-		819F9B7A2403C1C700518FFB /* TalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B772403C1C700518FFB /* TalentCell.swift */; };
-		819F9B7B2403C1C700518FFB /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B782403C1C700518FFB /* TalentViewController.swift */; };
-		819F9B7C2403C1C700518FFB /* TalentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B792403C1C700518FFB /* TalentDataSource.swift */; };
-		819F9B7E2403C20700518FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B7D2403C20700518FFB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		814C8F8624046AC700BD4D7E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentDataSource.swift; sourceTree = "<group>"; };
+		814C8F8B24046B8500BD4D7E /* TalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentCell.swift; sourceTree = "<group>"; };
+		814C8F8C24046B8500BD4D7E /* TalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentViewController.swift; sourceTree = "<group>"; };
 		819F9B602403C19B00518FFB /* Classic Talent Tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Talent Tree.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819F9B632403C19B00518FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819F9B652403C19B00518FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		819F9B6C2403C19C00518FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819F9B6F2403C19C00518FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		819F9B712403C19C00518FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		819F9B772403C1C700518FFB /* TalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentCell.swift; path = ../../../../Desktop/backup/TalentCell.swift; sourceTree = "<group>"; };
-		819F9B782403C1C700518FFB /* TalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentViewController.swift; path = ../../../../Desktop/backup/TalentViewController.swift; sourceTree = "<group>"; };
-		819F9B792403C1C700518FFB /* TalentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentDataSource.swift; path = ../../../../Desktop/backup/TalentDataSource.swift; sourceTree = "<group>"; };
-		819F9B7D2403C20700518FFB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,11 @@
 		819F9B622403C19B00518FFB /* Classic Talent Tree */ = {
 			isa = PBXGroup;
 			children = (
-				819F9B7D2403C20700518FFB /* Main.storyboard */,
-				819F9B772403C1C700518FFB /* TalentCell.swift */,
-				819F9B792403C1C700518FFB /* TalentDataSource.swift */,
-				819F9B782403C1C700518FFB /* TalentViewController.swift */,
+				814C8F8624046AC700BD4D7E /* Main.storyboard */,
 				819F9B632403C19B00518FFB /* AppDelegate.swift */,
+				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
+				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
+				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
 				819F9B652403C19B00518FFB /* SceneDelegate.swift */,
 				819F9B6C2403C19C00518FFB /* Assets.xcassets */,
 				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
@@ -131,9 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819F9B7E2403C20700518FFB /* Main.storyboard in Resources */,
 				819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */,
 				819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */,
+				814C8F8724046AC700BD4D7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,11 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819F9B7B2403C1C700518FFB /* TalentViewController.swift in Sources */,
 				819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */,
+				814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */,
 				819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */,
-				819F9B7A2403C1C700518FFB /* TalentCell.swift in Sources */,
-				819F9B7C2403C1C700518FFB /* TalentDataSource.swift in Sources */,
+				814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */,
+				814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
