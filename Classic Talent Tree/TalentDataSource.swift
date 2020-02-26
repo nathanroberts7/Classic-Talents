@@ -13,10 +13,12 @@ class TalentDataSource: NSObject, UICollectionViewDataSource {
     
     private var talents: [SkillElement] = []
     private var grid: [Int] = []
+    weak var delegate: TalentCellDelegate?
     
-    func configure(withTalents talents: [SkillElement], grid: [Int]) {
+    func configure(withTalents talents: [SkillElement], grid: [Int], delegate: TalentCellDelegate) {
         self.talents = talents
         self.grid = grid
+        self.delegate = delegate
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -31,7 +33,7 @@ class TalentDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "talent", for: indexPath) as! TalentCell
         let isNotEmpty = grid[indexPath.item]
         let talent: SkillElement? = isNotEmpty != 0 ? talents.removeFirst() : nil
-        cell.configureUI(withTalent: talent)
+        cell.configure(withTalent: talent, delegate: delegate)
         return cell
     }
 }

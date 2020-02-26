@@ -9,11 +9,19 @@
 import Foundation
 import UIKit
 
+protocol TalentCellDelegate: class {
+    func talentCell(_: TalentCell, addDownArrowToID: Int)
+}
+
 class TalentCell: UICollectionViewCell {
     
     private var maxCount: Int?
     private var currentCount: Int = 0
     private var talentImage: UIImageView?
+    var skill: SkillElement?
+    weak var delegate: TalentCellDelegate?
+    var downArrow: UIImageView?
+    var downRightArrow: UIImageView?
     
     private let background: UIImageView = {
         let imageView = UIImageView()
@@ -33,7 +41,8 @@ class TalentCell: UICollectionViewCell {
         return imageView
     }()
     
-    func configureUI(withTalent talent: SkillElement? = nil) {
+    func configure(withTalent talent: SkillElement? = nil, delegate: TalentCellDelegate? = nil) {
+        self.delegate = delegate
         guard let talent = talent else {
             contentView.addSubview(blankBackground)
             blankBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -42,7 +51,7 @@ class TalentCell: UICollectionViewCell {
             blankBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             return
         }
-        
+        skill = talent
         talentImage = getTalentImage(skillName: talent.name)
         
         contentView.addSubview(background)
@@ -58,6 +67,9 @@ class TalentCell: UICollectionViewCell {
         talentImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
         talentImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2).isActive = true
         talentImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
+        
+        guard let dependencyID = talent.requirements?.skill?.id else { return }
+        delegate?.talentCell(self, addDownArrowToID: dependencyID)
     }
     
     private func getTalentImage(skillName: String) -> UIImageView {

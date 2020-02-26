@@ -36,7 +36,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         guard let skills = mySkills else { return }
         
-        talentDataSource.configure(withTalents: skills, grid: grid)
+        talentDataSource.configure(withTalents: skills, grid: grid, delegate: self)
         //collectionView.reloadData()
     }
     
@@ -62,6 +62,25 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell else { return }
+    }
+}
+
+extension TalentViewController: TalentCellDelegate {
+    func talentCell(_ talentCell: TalentCell, addDownArrowToID: Int) {
+        let cell = collectionView.visibleCells.first() {
+            guard let cell = $0 as? TalentCell else { return false }
+            if cell.skill?.id == addDownArrowToID {
+                return true
+            }
+            return false
+        } as? TalentCell
+        guard let myCell = cell else { return }
+        let arrowView = UIImageView()
+        arrowView.image = UIImage(imageLiteralResourceName: "down-arrow")
+        collectionView.addSubview(arrowView)
+        arrowView.frame = CGRect(x: myCell.frame.origin.x + myCell.frame.width/2 - 10,
+                                 y: myCell.frame.origin.y + myCell.frame.height - 2, width: 20, height: myCell.frame.height + 34)
+        myCell.downArrow = arrowView
     }
 }
 
