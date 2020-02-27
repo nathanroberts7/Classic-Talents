@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-class FetchTalentData {
+class FetchSkillData {
     
-    enum Directory {
-        case skillIcons
-        
-        var path: String {
-            switch self {
-            case .skillIcons:
-                return "skill-icons/"
-            }
-        }
-    }
+//    enum Directory {
+//        case skillIcons
+//        
+//        var path: String {
+//            switch self {
+//            case .skillIcons:
+//                return "skill-icons/"
+//            }
+//        }
+//    }
     
-    static func getTalentImage(skillName: String) -> UIImage {
+    static func getSkillImage(skillName: String) -> UIImage {
 //        let path = "\(Directory.skillIcons.path)\(className.lowercased())/\(treeName.replacingOccurrences(of: " ", with: "-").lowercased())/"
         let skillPath = skillName.replacingOccurrences(of: "'", with: "")
             .replacingOccurrences(of: "(", with: "")

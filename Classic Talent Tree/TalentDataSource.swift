@@ -11,12 +11,12 @@ import UIKit
 
 class TalentDataSource: NSObject, UICollectionViewDataSource {
     
-    private var talents: [SkillElement] = []
+    private var skills: [SkillElement] = []
     private var grid: [Int] = []
     weak var delegate: TalentCellDelegate?
     
-    func configure(withTalents talents: [SkillElement], grid: [Int], delegate: TalentCellDelegate) {
-        self.talents = talents
+    func configure(withSkills skills: [SkillElement], grid: [Int], delegate: TalentCellDelegate) {
+        self.skills = skills
         self.grid = grid
         self.delegate = delegate
     }
@@ -32,8 +32,8 @@ class TalentDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "talent", for: indexPath) as! TalentCell
         let isNotEmpty = grid[indexPath.item]
-        let talent: SkillElement? = isNotEmpty != 0 ? talents.removeFirst() : nil
-        cell.configure(withTalent: talent, delegate: delegate)
+        let skill: SkillElement? = isNotEmpty != 0 ? skills.removeFirst() : nil
+        cell.configure(withSkill: skill, delegate: delegate)
         return cell
     }
 }

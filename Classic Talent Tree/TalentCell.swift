@@ -17,7 +17,7 @@ class TalentCell: UICollectionViewCell {
     
     private var maxCount: Int?
     private var currentCount: Int = 0
-    private var talentImage: UIImageView?
+    private var skillImage: UIImageView?
     var skill: SkillElement?
     weak var delegate: TalentCellDelegate?
     var downArrow: UIImageView?
@@ -41,9 +41,9 @@ class TalentCell: UICollectionViewCell {
         return imageView
     }()
     
-    func configure(withTalent talent: SkillElement? = nil, delegate: TalentCellDelegate? = nil) {
+    func configure(withSkill skill: SkillElement? = nil, delegate: TalentCellDelegate? = nil) {
         self.delegate = delegate
-        guard let talent = talent else {
+        guard let skill = skill else {
             contentView.addSubview(blankBackground)
             blankBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
             blankBackground.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
@@ -51,8 +51,8 @@ class TalentCell: UICollectionViewCell {
             blankBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             return
         }
-        skill = talent
-        talentImage = getTalentImage(skillName: talent.name)
+        self.skill = skill
+        skillImage = getSkillImage(skillName: skill.name)
         
         contentView.addSubview(background)
         
@@ -61,23 +61,23 @@ class TalentCell: UICollectionViewCell {
         background.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         background.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        guard let talentImage = talentImage else { return }
-        contentView.addSubview(talentImage)
-        talentImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
-        talentImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
-        talentImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2).isActive = true
-        talentImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
+        guard let skillImage = skillImage else { return }
+        contentView.addSubview(skillImage)
+        skillImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
+        skillImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
+        skillImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2).isActive = true
+        skillImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
         
-        guard let dependencyID = talent.requirements?.skill?.id else { return }
+        guard let dependencyID = skill.requirements?.skill?.id else { return }
         delegate?.talentCell(self, addDownArrowToID: dependencyID)
     }
     
-    private func getTalentImage(skillName: String) -> UIImageView {
+    private func getSkillImage(skillName: String) -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
-        imageView.image = FetchTalentData.getTalentImage(skillName: skillName)
+        imageView.image = FetchSkillData.getSkillImage(skillName: skillName)
         return imageView
     }
 }

@@ -11,13 +11,15 @@
 		814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */; };
 		814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8B24046B8500BD4D7E /* TalentCell.swift */; };
 		814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8C24046B8500BD4D7E /* TalentViewController.swift */; };
+		818B16FB2407401E002AE55F /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818B16FA2407401E002AE55F /* TalentData.swift */; };
+		818B16FE2407A3C7002AE55F /* ClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818B16FD2407A3C7002AE55F /* ClassInfo.swift */; };
 		819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B632403C19B00518FFB /* AppDelegate.swift */; };
 		819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B652403C19B00518FFB /* SceneDelegate.swift */; };
 		819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6C2403C19C00518FFB /* Assets.xcassets */; };
 		819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */; };
 		81F9A9942406425F009D8E3E /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A9932406425F009D8E3E /* Talents.swift */; };
 		81F9A99624064306009D8E3E /* talent-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F9A99524064306009D8E3E /* talent-data.json */; };
-		81F9A999240649E0009D8E3E /* FetchTalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A998240649E0009D8E3E /* FetchTalentData.swift */; };
+		81F9A999240649E0009D8E3E /* FetchSkillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A998240649E0009D8E3E /* FetchSkillData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentDataSource.swift; sourceTree = "<group>"; };
 		814C8F8B24046B8500BD4D7E /* TalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentCell.swift; sourceTree = "<group>"; };
 		814C8F8C24046B8500BD4D7E /* TalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentViewController.swift; sourceTree = "<group>"; };
+		818B16FA2407401E002AE55F /* TalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentData.swift; sourceTree = "<group>"; };
+		818B16FD2407A3C7002AE55F /* ClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfo.swift; sourceTree = "<group>"; };
 		819F9B602403C19B00518FFB /* Classic Talent Tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Talent Tree.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819F9B632403C19B00518FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819F9B652403C19B00518FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +37,7 @@
 		819F9B712403C19C00518FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		81F9A99524064306009D8E3E /* talent-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "talent-data.json"; sourceTree = "<group>"; };
-		81F9A998240649E0009D8E3E /* FetchTalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTalentData.swift; sourceTree = "<group>"; };
+		81F9A998240649E0009D8E3E /* FetchSkillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSkillData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		818B16F824073FCB002AE55F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				81F9A99524064306009D8E3E /* talent-data.json */,
+				818B16FA2407401E002AE55F /* TalentData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		818B16F924073FE8002AE55F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				814C8F8624046AC700BD4D7E /* Main.storyboard */,
+				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		818B16FC2407A184002AE55F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				819F9B6C2403C19C00518FFB /* Assets.xcassets */,
+				819F9B712403C19C00518FFB /* Info.plist */,
+				819F9B632403C19B00518FFB /* AppDelegate.swift */,
+				819F9B652403C19B00518FFB /* SceneDelegate.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		819F9B572403C19B00518FFB = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +99,15 @@
 		819F9B622403C19B00518FFB /* Classic Talent Tree */ = {
 			isa = PBXGroup;
 			children = (
-				81F9A99524064306009D8E3E /* talent-data.json */,
-				814C8F8624046AC700BD4D7E /* Main.storyboard */,
-				819F9B632403C19B00518FFB /* AppDelegate.swift */,
 				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
 				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
 				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
-				819F9B652403C19B00518FFB /* SceneDelegate.swift */,
-				819F9B6C2403C19C00518FFB /* Assets.xcassets */,
-				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
-				819F9B712403C19C00518FFB /* Info.plist */,
+				81F9A998240649E0009D8E3E /* FetchSkillData.swift */,
+				818B16FD2407A3C7002AE55F /* ClassInfo.swift */,
+				818B16F924073FE8002AE55F /* Storyboards */,
+				818B16F824073FCB002AE55F /* Data */,
 				81F9A99724064936009D8E3E /* Models */,
-				81F9A998240649E0009D8E3E /* FetchTalentData.swift */,
+				818B16FC2407A184002AE55F /* Configuration */,
 			);
 			path = "Classic Talent Tree";
 			sourceTree = "<group>";
@@ -164,9 +194,11 @@
 			files = (
 				819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */,
 				814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */,
+				818B16FE2407A3C7002AE55F /* ClassInfo.swift in Sources */,
 				819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */,
-				81F9A999240649E0009D8E3E /* FetchTalentData.swift in Sources */,
+				81F9A999240649E0009D8E3E /* FetchSkillData.swift in Sources */,
 				814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */,
+				818B16FB2407401E002AE55F /* TalentData.swift in Sources */,
 				81F9A9942406425F009D8E3E /* Talents.swift in Sources */,
 				814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */,
 			);
@@ -306,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AN9F5QR8XQ;
-				INFOPLIST_FILE = "Classic Talent Tree/Info.plist";
+				INFOPLIST_FILE = "Classic Talent Tree/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AN9F5QR8XQ;
-				INFOPLIST_FILE = "Classic Talent Tree/Info.plist";
+				INFOPLIST_FILE = "Classic Talent Tree/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
