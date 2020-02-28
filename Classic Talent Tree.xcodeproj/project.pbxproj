@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		814C8F8724046AC700BD4D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C8F8624046AC700BD4D7E /* Main.storyboard */; };
+		814C44E92408DAE60062CA53 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C44E82408DAE60062CA53 /* TabBar.storyboard */; };
+		814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C44EA2408DB0C0062CA53 /* TabViewController.swift */; };
+		814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C8F8624046AC700BD4D7E /* Talent.storyboard */; };
 		814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */; };
 		814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8B24046B8500BD4D7E /* TalentCell.swift */; };
 		814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8C24046B8500BD4D7E /* TalentViewController.swift */; };
 		818B16FB2407401E002AE55F /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818B16FA2407401E002AE55F /* TalentData.swift */; };
-		818B16FE2407A3C7002AE55F /* ClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818B16FD2407A3C7002AE55F /* ClassInfo.swift */; };
 		819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B632403C19B00518FFB /* AppDelegate.swift */; };
 		819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B652403C19B00518FFB /* SceneDelegate.swift */; };
 		819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6C2403C19C00518FFB /* Assets.xcassets */; };
@@ -23,12 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		814C8F8624046AC700BD4D7E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		814C44E82408DAE60062CA53 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		814C44EA2408DB0C0062CA53 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		814C8F8624046AC700BD4D7E /* Talent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Talent.storyboard; sourceTree = "<group>"; };
 		814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentDataSource.swift; sourceTree = "<group>"; };
 		814C8F8B24046B8500BD4D7E /* TalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentCell.swift; sourceTree = "<group>"; };
 		814C8F8C24046B8500BD4D7E /* TalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentViewController.swift; sourceTree = "<group>"; };
 		818B16FA2407401E002AE55F /* TalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentData.swift; sourceTree = "<group>"; };
-		818B16FD2407A3C7002AE55F /* ClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfo.swift; sourceTree = "<group>"; };
 		819F9B602403C19B00518FFB /* Classic Talent Tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Talent Tree.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819F9B632403C19B00518FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819F9B652403C19B00518FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +65,9 @@
 		818B16F924073FE8002AE55F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				814C8F8624046AC700BD4D7E /* Main.storyboard */,
+				814C8F8624046AC700BD4D7E /* Talent.storyboard */,
 				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
+				814C44E82408DAE60062CA53 /* TabBar.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -99,11 +102,11 @@
 		819F9B622403C19B00518FFB /* Classic Talent Tree */ = {
 			isa = PBXGroup;
 			children = (
+				814C44EA2408DB0C0062CA53 /* TabViewController.swift */,
 				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
 				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
 				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
 				81F9A998240649E0009D8E3E /* FetchSkillData.swift */,
-				818B16FD2407A3C7002AE55F /* ClassInfo.swift */,
 				818B16F924073FE8002AE55F /* Storyboards */,
 				818B16F824073FCB002AE55F /* Data */,
 				81F9A99724064936009D8E3E /* Models */,
@@ -178,9 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814C44E92408DAE60062CA53 /* TabBar.storyboard in Resources */,
 				819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */,
 				819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */,
-				814C8F8724046AC700BD4D7E /* Main.storyboard in Resources */,
+				814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */,
 				81F9A99624064306009D8E3E /* talent-data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,12 +198,12 @@
 			files = (
 				819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */,
 				814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */,
-				818B16FE2407A3C7002AE55F /* ClassInfo.swift in Sources */,
 				819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */,
 				81F9A999240649E0009D8E3E /* FetchSkillData.swift in Sources */,
 				814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */,
 				818B16FB2407401E002AE55F /* TalentData.swift in Sources */,
 				81F9A9942406425F009D8E3E /* Talents.swift in Sources */,
+				814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */,
 				814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

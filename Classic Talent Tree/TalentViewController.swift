@@ -26,16 +26,12 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = talentDataSource
         collectionView.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
-
-        let talentData = TalentData.data
-        let myClass = talentData?.classes.first() { $0.name == "Mage"}
-        let myTree = myClass?.talentTrees.first() { $0.name == "Fire"}
-        let spec = ClassInfo.Mage.specializations.first(where: { $0 == .fire })
-        guard let skills = myTree?.skills, let grid = spec?.grid else { return }
-        talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
-        //collectionView.reloadData()
     }
     
+    func configure(skills: [SkillElement], grid: [Int]) {
+        talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
+        collectionView?.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let totalSpacing = (2 * Constants.sectionInsets.left) + ((Constants.itemsPerRow - 1) * Constants.cellSpacing)
@@ -68,7 +64,7 @@ extension TalentViewController: TalentCellDelegate {
         arrowView.image = UIImage(imageLiteralResourceName: "down-arrow")
         collectionView.addSubview(arrowView)
         arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width/2 - 10,
-                                 y: cell.frame.origin.y + cell.frame.height - 2, width: 20, height: cell.frame.height + 34)
+                                 y: cell.frame.origin.y + cell.frame.height - 2, width: 20, height: (talentCell.frame.minY - cell.frame.maxY) + 5)
         cell.downArrow = arrowView
     }
 }
