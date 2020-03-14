@@ -125,7 +125,7 @@ class TalentCell: UICollectionViewCell {
         
         // Skill Image Setup
         self.skill = skill
-        skillImage = FetchSkillData.getSkillImage(skillName: skill.name)
+        skillImage = FetchData.getSkillImage(skillName: skill.name)
         skillBWImage = skillImage?.grayscaled
         skillImageView.image = skillBWImage
         contentView.addSubview(skillImageView)
@@ -137,15 +137,18 @@ class TalentCell: UICollectionViewCell {
         // Count Label Setup
         countLabel = UILabel(frame: CGRect(x: contentView.frame.maxX - 15,
                                            y: contentView.frame.maxY - 10,
-                                           width: contentView.frame.width * 0.45,
+                                           width: contentView.frame.width * 0.35,
                                            height: contentView.frame.height * 0.20))
-        countLabel.font = UIFont(name: "Roboto", size: 12)
+        countLabel.font = UIFont(name: "Arial", size: 14)
+        //countLabel.sizeToFit()
         contentView.addSubview(countLabel)
         countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
         countLabel.backgroundColor = .black
         countLabel.textColor = .gray
-        countLabel.clipsToBounds = false
-        countLabel.layer.cornerRadius = 6
+        countLabel.layer.masksToBounds = true
+        countLabel.layer.cornerRadius = 3.5
+        countLabel.sizeToFit()
+        countLabel.layoutIfNeeded()
         
         
         // Programmatically add arrows for dependent talents

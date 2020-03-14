@@ -16,6 +16,14 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     private var rowRequirement = [0, 5, 10, 15, 20, 25, 30]
     private var rowPointCount = [0, 0, 0, 0, 0, 0, 0]
     
+    
+    @IBOutlet private var remainingPointsLabel: UILabel!
+    @IBOutlet private var requiredLevelLabel: UILabel!
+    @IBOutlet private var backgroundImageView: UIImageView!
+    private var backgroundImage: UIImage!
+    
+    
+    
     enum Constants {
         static let itemsPerRow: CGFloat = 4
         static let cellSpacing: CGFloat = 15
@@ -30,12 +38,14 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = talentDataSource
         collectionView.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
+        backgroundImageView.image = backgroundImage
     }
     
-    func configure(skills: [SkillElement], grid: [Int], reference: TabViewController) {
+    func configure(skills: [SkillElement], grid: [Int], image: UIImage, reference: TabViewController) {
         talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
         collectionView?.reloadData()
         tabViewReference = reference
+        backgroundImage = image
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -120,6 +130,9 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
             count += rowPointCount[index]
         }
         return count
+    }
+    
+    @IBAction func resetPoints(_ sender: UIButton) {
     }
 }
 

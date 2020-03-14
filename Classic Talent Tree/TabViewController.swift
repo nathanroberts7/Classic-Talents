@@ -21,9 +21,13 @@ class TabViewController: UITabBarController {
                 let name = specialization.name
                 let storyboard = UIStoryboard(name: "Talent", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "Talent") as? TalentViewController else { return }
-                let tab = UITabBarItem(title: name, image: nil, selectedImage: nil)
+                let tabImage = FetchData.getSpecImage(className: currentClass.name,specName: name).resizeMyImage(newWidth: 24).roundMyImage.withRenderingMode(.alwaysOriginal)
+                let tab = UITabBarItem(title: name, image: tabImage, selectedImage: nil)
                 viewController.tabBarItem = tab
-                viewController.configure(skills: skills, grid: self.getGrid(withSpecialization: name), reference: self)
+                viewController.configure(skills: skills,
+                                         grid: self.getGrid(withSpecialization: name),
+                                         image: FetchData.getSpecBackgroundImage(className: currentClass.name, specName: name),
+                                         reference: self)
                 if self.viewControllers == nil {
                     self.viewControllers = [viewController]
                 } else {
@@ -35,8 +39,8 @@ class TabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let talentData = TalentData.data else { preconditionFailure() }
+        tabBar.tintColor = .white
         currentClass = talentData.classes.first(where: { $0.name == "Mage" })
     }
     
