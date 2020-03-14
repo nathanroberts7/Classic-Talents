@@ -11,7 +11,9 @@ import UIKit
 class TalentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var collectionView: UICollectionView!
-    private var pointCount = 0
+    private var pointCount: Int = 0
+    private var rowRequirement = [0, 5, 10, 15, 20, 25, 30]
+    private var rowPointCount = [0, 0, 0, 0, 0, 0, 0]
     
     enum Constants {
         static let itemsPerRow: CGFloat = 4
@@ -55,27 +57,51 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
+        let row = skill.position[0] - 1
         if skill.currentRank < skill.maxRank {
             cell.skill?.currentRank += 1
+            rowPointCount[row] += 1
             pointCount += 1
         } else {
             cell.skill?.currentRank = 0
+            rowPointCount[row] -= skill.maxRank
             pointCount -= skill.maxRank
         }
         cell.updateCount()
-        updateCellAvailability()
+        updateCellAvailability(forRow: row)
     }
     
-    private func updateCellAvailability() {
+    private func updateCellAvailability(forRow row: Int) {
         guard let collectionView = collectionView else { return }
         for index in 0...27 {
-            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell else { return }
-            if index < (pointCount/5)*4+4 {
-                cell.isAvailable = true
-            } else {
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell,
+                let pointRequirement = cell.skill?.requirements?.specPoints else { continue }
+            guard pointCount >= pointRequirement else { cell.isAvailable = false; continue }
+            cell.isAvailable = true
+        }
+        
+        // If a row does not meet the requirements, delete all rows above it.
+        if row != 6 && currentRowPointCount(toRow: row) < rowRequirement[row + 1] {
+            for index in ((row + 1) * 4)...27 {
+                guard let cell = collectionView.cellForItem(at: IndexPath(item: index , section: 0)) as? TalentCell, let skill = cell.skill else { continue }
+                let upperRow = index/4
+                guard upperRow >= 1 else {continue}
                 cell.isAvailable = false
+                pointCount -= skill.currentRank
+                cell.skill?.currentRank = 0
+                cell.updateCount()
+                rowPointCount[upperRow] = 0
+                
             }
         }
+    }
+    
+    private func currentRowPointCount(toRow row: Int) -> Int {
+        var count = 0
+        for index in 0...row {
+            count += rowPointCount[index]
+        }
+        return count
     }
 }
 

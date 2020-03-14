@@ -10,8 +10,13 @@ import UIKit
 
 extension UIImage {
     var grayscaled: UIImage? {
-        let ciImage = CIImage(image: self)
-        guard let grayscale = ciImage?.applyingFilter("CIColorControls", parameters: [ kCIInputSaturationKey: 0.0 ]) else { return nil }
-        return UIImage(ciImage: grayscale)
+       let context = CIContext(options: nil)
+        guard let currentFilter = CIFilter(name: "CIPhotoEffectTonal") else { return nil }
+        currentFilter.setValue(CIImage(image: self), forKey: kCIInputImageKey)
+        if let output = currentFilter.outputImage,
+            let cgImage = context.createCGImage(output, from: output.extent) {
+            return UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
+        }
+        return nil
     }
 }
