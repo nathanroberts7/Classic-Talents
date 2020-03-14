@@ -58,8 +58,17 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable, tabViewReference.pointsRemaining > 0 else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
         let row = skill.position[0] - 1
+        guard tabViewReference.pointsRemaining > 0 else {
+            cell.skill?.currentRank = 0
+            rowPointCount[row] -= skill.currentRank
+            pointCount -= skill.currentRank
+            tabViewReference.pointsRemaining += skill.currentRank
+            cell.updateCount()
+            updateCellAvailability(forRow: row)
+            return
+        }
         if skill.currentRank < skill.maxRank {
             cell.skill?.currentRank += 1
             rowPointCount[row] += 1
