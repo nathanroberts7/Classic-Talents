@@ -77,6 +77,10 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
             guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell,
                 let pointRequirement = cell.skill?.requirements?.specPoints else { continue }
             guard pointCount >= pointRequirement else { cell.isAvailable = false; continue }
+            if let dependentID = cell.dependentID {
+                guard let dependentCell = collectionView.visibleCells.first(where: { ($0 as? TalentCell)?.skill?.id == dependentID }) as? TalentCell,
+                    dependentCell.skill?.currentRank == dependentCell.skill?.maxRank else { cell.isAvailable = false; continue }
+            }
             cell.isAvailable = true
         }
         

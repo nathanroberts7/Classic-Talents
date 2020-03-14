@@ -45,6 +45,7 @@ class TalentCell: UICollectionViewCell {
     
     // State:
     private var isGray = true
+    var dependentID: Int?
     
     // Views:
     private var countLabel: UILabel!
@@ -150,6 +151,7 @@ class TalentCell: UICollectionViewCell {
         // Programmatically add arrows for dependent talents
         guard let dependencyID = skill.requirements?.skill?.id else { return }
         delegate?.talentCell(self, addDownArrowToID: dependencyID)
+        dependentID = dependencyID
     }
     
     func updateCount() {
