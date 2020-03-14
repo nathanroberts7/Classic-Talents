@@ -12,7 +12,6 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     @IBOutlet var collectionView: UICollectionView!
     private var pointCount = 0
-    private var hasLoaded: Bool = false
     
     enum Constants {
         static let itemsPerRow: CGFloat = 4
@@ -28,15 +27,6 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = talentDataSource
         collectionView.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        guard !hasLoaded else { return }
-        DispatchQueue.main.async {
-            self.updateCellAvailability()
-        }
-        hasLoaded = true
     }
     
     func configure(skills: [SkillElement], grid: [Int]) {
@@ -78,7 +68,6 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     private func updateCellAvailability() {
         guard let collectionView = collectionView else { return }
-
         for index in 0...27 {
             guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell else { return }
             if index < (pointCount/5)*4+4 {
@@ -98,7 +87,7 @@ extension TalentViewController: TalentCellDelegate {
         collectionView.addSubview(arrowView)
         arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width/2 - 10,
                                  y: cell.frame.origin.y + cell.frame.height - 2, width: 20, height: (talentCell.frame.minY - cell.frame.maxY) + 5)
-        cell.downArrow = arrowView
+        talentCell.downArrow = arrowView
     }
 }
 

@@ -24,33 +24,62 @@ class TalentCell: UICollectionViewCell {
         didSet {
             switch isAvailable {
             case true:
-                guard let skill = skill else { return }
+                guard isGray else { return }
                 countLabel?.textColor = .green
-                skillImageView.image = FetchSkillData.getSkillImage(skillName: skill.name)
+                skillImageView.image = skillImage
                 background.backgroundColor = .green
+                downArrow?.image = downArrowImage
+                downRightArrow?.image = downRightArrowImage
                 isGray = false
             case false:
                 guard !isGray else { return }
                 countLabel?.textColor = .gray
-                skillImageView.image = skillImageView.image?.grayscaled
+                skillImageView.image = skillBWImage
                 background.backgroundColor = .gray
+                downArrow?.image = downArrowBWImage
+                downRightArrow?.image = downRightArrowBWImage
                 isGray = true
             }
         }
     }
     
     // State:
-    private var isGray = false
+    private var isGray = true
     
     // Views:
     private var countLabel: UILabel!
-    var downArrow: UIImageView?
-    var downRightArrow: UIImageView?
+    
+    var downArrow: UIImageView? {
+        didSet {
+            downArrowImage = downArrow?.image
+            downArrowBWImage = downArrow?.image?.grayscaled
+            if !isAvailable {
+                downArrow?.image = downArrowBWImage
+            }
+        }
+    }
+    private var downArrowImage: UIImage?
+    private var downArrowBWImage: UIImage?
+    
+    var downRightArrow: UIImageView? {
+        didSet {
+            downRightArrowImage = downRightArrow?.image
+            downRightArrowBWImage = downRightArrow?.image?.grayscaled
+            if !isAvailable {
+                downRightArrow?.image = downRightArrowBWImage
+            }
+        }
+    }
+    private var downRightArrowImage: UIImage?
+    private var downRightArrowBWImage: UIImage?
+    private var skillImage: UIImage?
+    private var skillBWImage: UIImage?
+    
     
     private let background: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .green
+        imageView.backgroundColor = .gray
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
         return imageView
@@ -95,7 +124,9 @@ class TalentCell: UICollectionViewCell {
         
         // Skill Image Setup
         self.skill = skill
-        skillImageView.image = FetchSkillData.getSkillImage(skillName: skill.name)
+        skillImage = FetchSkillData.getSkillImage(skillName: skill.name)
+        skillBWImage = skillImage?.grayscaled
+        skillImageView.image = skillBWImage
         contentView.addSubview(skillImageView)
         skillImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
         skillImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
@@ -105,12 +136,13 @@ class TalentCell: UICollectionViewCell {
         // Count Label Setup
         countLabel = UILabel(frame: CGRect(x: contentView.frame.maxX - 15,
                                            y: contentView.frame.maxY - 10,
-                                           width: contentView.frame.width * 0.35,
+                                           width: contentView.frame.width * 0.45,
                                            height: contentView.frame.height * 0.20))
+        countLabel.font = UIFont(name: "Roboto", size: 12)
         contentView.addSubview(countLabel)
         countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
         countLabel.backgroundColor = .black
-        countLabel.textColor = .green
+        countLabel.textColor = .gray
         countLabel.clipsToBounds = false
         countLabel.layer.cornerRadius = 6
         
