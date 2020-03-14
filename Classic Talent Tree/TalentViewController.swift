@@ -11,6 +11,7 @@ import UIKit
 class TalentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var collectionView: UICollectionView!
+    private var tabViewReference: TabViewController!
     private var pointCount: Int = 0
     private var rowRequirement = [0, 5, 10, 15, 20, 25, 30]
     private var rowPointCount = [0, 0, 0, 0, 0, 0, 0]
@@ -31,9 +32,10 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
     }
     
-    func configure(skills: [SkillElement], grid: [Int]) {
+    func configure(skills: [SkillElement], grid: [Int], reference: TabViewController) {
         talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
         collectionView?.reloadData()
+        tabViewReference = reference
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -56,16 +58,18 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable, tabViewReference.pointsRemaining > 0 else { return }
         let row = skill.position[0] - 1
         if skill.currentRank < skill.maxRank {
             cell.skill?.currentRank += 1
             rowPointCount[row] += 1
             pointCount += 1
+            tabViewReference.pointsRemaining -= 1
         } else {
             cell.skill?.currentRank = 0
             rowPointCount[row] -= skill.maxRank
             pointCount -= skill.maxRank
+            tabViewReference.pointsRemaining += skill.maxRank
         }
         cell.updateCount()
         updateCellAvailability(forRow: row)
@@ -92,6 +96,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
                 guard upperRow >= 1 else {continue}
                 cell.isAvailable = false
                 pointCount -= skill.currentRank
+                tabViewReference.pointsRemaining += skill.currentRank
                 cell.skill?.currentRank = 0
                 cell.updateCount()
                 rowPointCount[upperRow] = 0

@@ -11,6 +11,7 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
+    var pointsRemaining: Int = 51
     
     var currentClass: Class? {
         didSet {
@@ -22,7 +23,7 @@ class TabViewController: UITabBarController {
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "Talent") as? TalentViewController else { return }
                 let tab = UITabBarItem(title: name, image: nil, selectedImage: nil)
                 viewController.tabBarItem = tab
-                viewController.configure(skills: skills, grid: self.getGrid(withSpecialization: name))
+                viewController.configure(skills: skills, grid: self.getGrid(withSpecialization: name), reference: self)
                 if self.viewControllers == nil {
                     self.viewControllers = [viewController]
                 } else {
