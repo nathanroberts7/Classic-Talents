@@ -11,6 +11,8 @@ import UIKit
 class TalentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var collectionView: UICollectionView!
+    private var pointCount = 0
+    private var hasLoaded: Bool = false
     
     enum Constants {
         static let itemsPerRow: CGFloat = 4
@@ -26,6 +28,15 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = talentDataSource
         collectionView.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard !hasLoaded else { return }
+        DispatchQueue.main.async {
+            self.updateCellAvailability()
+        }
+        hasLoaded = true
     }
     
     func configure(skills: [SkillElement], grid: [Int]) {
@@ -53,7 +64,29 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
+        if skill.currentRank < skill.maxRank {
+            cell.skill?.currentRank += 1
+            pointCount += 1
+        } else {
+            cell.skill?.currentRank = 0
+            pointCount -= skill.maxRank
+        }
+        cell.updateCount()
+        updateCellAvailability()
+    }
+    
+    private func updateCellAvailability() {
+        guard let collectionView = collectionView else { return }
+
+        for index in 0...27 {
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell else { return }
+            if index < (pointCount/5)*4+4 {
+                cell.isAvailable = true
+            } else {
+                cell.isAvailable = false
+            }
+        }
     }
 }
 

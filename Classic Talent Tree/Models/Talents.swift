@@ -30,7 +30,8 @@ struct TalentTree: Codable {
 struct SkillElement: Codable {
     let id: Int
     let name: String
-    let maxRank, currentRank: Int
+    let maxRank: Int
+    var currentRank: Int
     let position: [Int]
     let rankDescription: [String]
     let enabled, faded: Bool

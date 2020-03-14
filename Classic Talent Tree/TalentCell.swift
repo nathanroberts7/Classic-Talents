@@ -15,11 +15,35 @@ protocol TalentCellDelegate: class {
 
 class TalentCell: UICollectionViewCell {
     
-    private var maxCount: Int?
-    private var currentCount: Int = 0
-    private var skillImage: UIImageView?
+    
     var skill: SkillElement?
+    
     weak var delegate: TalentCellDelegate?
+    
+    var isAvailable: Bool = false {
+        didSet {
+            switch isAvailable {
+            case true:
+                guard let skill = skill else { return }
+                countLabel?.textColor = .green
+                skillImageView.image = FetchSkillData.getSkillImage(skillName: skill.name)
+                background.backgroundColor = .green
+                isGray = false
+            case false:
+                guard !isGray else { return }
+                countLabel?.textColor = .gray
+                skillImageView.image = skillImageView.image?.grayscaled
+                background.backgroundColor = .gray
+                isGray = true
+            }
+        }
+    }
+    
+    // State:
+    private var isGray = false
+    
+    // Views:
+    private var countLabel: UILabel!
     var downArrow: UIImageView?
     var downRightArrow: UIImageView?
     
@@ -41,8 +65,18 @@ class TalentCell: UICollectionViewCell {
         return imageView
     }()
     
+    private let skillImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
+        return imageView
+    }()
+    
     func configure(withSkill skill: SkillElement? = nil, delegate: TalentCellDelegate? = nil) {
         self.delegate = delegate
+        
+        // Invisible Cell Setup (Cell Index does not contain a skill)
         guard let skill = skill else {
             contentView.addSubview(blankBackground)
             blankBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -51,33 +85,43 @@ class TalentCell: UICollectionViewCell {
             blankBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             return
         }
-        self.skill = skill
-        skillImage = getSkillImage(skillName: skill.name)
         
+        // Colored Background Setup
         contentView.addSubview(background)
-        
         background.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         background.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         background.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         background.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        guard let skillImage = skillImage else { return }
-        contentView.addSubview(skillImage)
-        skillImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
-        skillImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
-        skillImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2).isActive = true
-        skillImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
+        // Skill Image Setup
+        self.skill = skill
+        skillImageView.image = FetchSkillData.getSkillImage(skillName: skill.name)
+        contentView.addSubview(skillImageView)
+        skillImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
+        skillImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2).isActive = true
+        skillImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2).isActive = true
+        skillImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
         
+        // Count Label Setup
+        countLabel = UILabel(frame: CGRect(x: contentView.frame.maxX - 15,
+                                           y: contentView.frame.maxY - 10,
+                                           width: contentView.frame.width * 0.35,
+                                           height: contentView.frame.height * 0.20))
+        contentView.addSubview(countLabel)
+        countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
+        countLabel.backgroundColor = .black
+        countLabel.textColor = .green
+        countLabel.clipsToBounds = false
+        countLabel.layer.cornerRadius = 6
+        
+        
+        // Programmatically add arrows for dependent talents
         guard let dependencyID = skill.requirements?.skill?.id else { return }
         delegate?.talentCell(self, addDownArrowToID: dependencyID)
     }
     
-    private func getSkillImage(skillName: String) -> UIImageView {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 12
-        imageView.image = FetchSkillData.getSkillImage(skillName: skillName)
-        return imageView
+    func updateCount() {
+        guard let skill = skill else { return }
+        countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
     }
 }
