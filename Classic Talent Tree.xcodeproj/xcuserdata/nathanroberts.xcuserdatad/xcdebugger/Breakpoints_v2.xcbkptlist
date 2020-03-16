@@ -7,208 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41727545-6B44-44FB-BEB7-C4920774F9CB"
+            uuid = "430D7F9D-8677-4D4C-9C2E-B12B404ED0CA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/TalentViewController.swift"
+            filePath = "Classic Talent Tree/TalentCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "updateCellAvailability(forRow:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "updateColors()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B1DFCCE1-F64D-48F9-B411-07702BE50350"
+            uuid = "FC408D54-9FF9-4DEE-994C-D417A4ABFF3B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classic Talent Tree/TalentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "TalentViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9DF35990-69BB-4ACC-99E9-ED824865431A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/FetchData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "getSpecBackgroundImage(className:specName:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D2C4D452-C652-4BA5-8F0B-54DD8DBBF76E"
+            uuid = "13020747-2E4D-447E-85C2-C6E90199FD6D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classic Talent Tree/TalentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "TalentViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B97A3AC1-1A65-4BD1-B639-1DA188D18E5C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/TabViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "currentClass"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4913C744-377B-4593-A63D-39565A0FBC54"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/TalentViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "updateCellAvailability(forRow:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7BB43808-CC0D-42ED-BBF1-121B2ABD6CF6"
+            uuid = "EA387CBA-4F8D-476F-81A9-F6D3BB03D155"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classic Talent Tree/TalentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "updateCellAvailability(forRow:)"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "resetPoints(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EB29EBB1-2BF0-4E2B-9178-1F8D382C9C07"
+            uuid = "5DE0901C-8C1B-4B56-8101-A42F26D41091"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classic Talent Tree/TalentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "updateCellAvailability(forRow:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EB29EBB1-2BF0-4E2B-9178-1F8D382C9C07 - d24c960fbdd351bd"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Classic_Talent_Tree.TalentViewController.(updateCellAvailability in _EF74D675E40DCC0DF1F9AB7C43018054)(forRow: Swift.Int) -&gt; ()"
-                  moduleName = "Classic Talent Tree"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nathanroberts/Documents/iOS%20Development/Classic%20Talent%20Tree/Classic%20Talent%20Tree/TalentViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "4351">
-               </Location>
-               <Location
-                  uuid = "EB29EBB1-2BF0-4E2B-9178-1F8D382C9C07 - d24c960fbdd351bd"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Classic_Talent_Tree.TalentViewController.(updateCellAvailability in _EF74D675E40DCC0DF1F9AB7C43018054)(forRow: Swift.Int) -&gt; ()"
-                  moduleName = "Classic Talent Tree"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nathanroberts/Documents/iOS%20Development/Classic%20Talent%20Tree/Classic%20Talent%20Tree/TalentViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "4528">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0453F9BF-BEBC-444A-A9D8-C67B35CF0285"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/TalentViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "updateCellAvailability(forRow:)"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "resetPoints(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4F2AA45-A075-474A-8290-78154B020A78"
+            uuid = "8B009823-F845-418A-AC96-F6B7C5BFE113"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classic Talent Tree/TalentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "updateCellAvailability(forRow:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C0A63DA5-B694-4D52-B725-27F49AD0BD32"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classic Talent Tree/TalentViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "updateCellAvailability(forRow:)"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "resetPoints(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

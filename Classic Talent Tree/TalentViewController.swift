@@ -41,6 +41,12 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         backgroundImageView.image = backgroundImage
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateRequiredLevelLabel()
+        updateRemainingPointsLabel()
+    }
+    
     func configure(skills: [SkillElement], grid: [Int], image: UIImage, reference: TabViewController) {
         talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
         collectionView?.reloadData()
@@ -65,6 +71,13 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
+        
+        defer {
+            cell.updateColor()
+            updateRequiredLevelLabel()
+            updateRemainingPointsLabel()
+        }
+        
         let row = skill.position[0] - 1
         
         // If all possible points were used, reset the cell the user taps next.
@@ -74,7 +87,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         // Tap to increase the rank. If already max, then reset.
         increaseCellRank(cell: cell, atRow: row)
         
-        cell.updateCount()
+        cell.updateText()
         updateCellAvailability(forRow: row)
     }
     
@@ -122,7 +135,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         rowPointCount[row] -= skill.currentRank
         pointCount -= skill.currentRank
         tabViewReference?.pointsRemaining += skill.currentRank
-        cell.updateCount()
+        cell.updateText()
         updateCellAvailability(forRow: row)
     }
     
@@ -133,7 +146,27 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         tabViewReference?.pointsRemaining -= 1
     }
     
+    private func updateRemainingPointsLabel() {
+        guard let points = tabViewReference?.pointsRemaining else { return }
+        remainingPointsLabel.text = "Remaining Points: \(points)"
+    }
+    
+    private func updateRequiredLevelLabel() {
+        guard let points = tabViewReference?.pointsRemaining, points < 51 else { requiredLevelLabel.text = "Required Level: -"; return }
+        requiredLevelLabel.text = "Required Level: \((51 - points) + 9)"
+    }
+    
     @IBAction func resetPoints(_ sender: UIButton) {
+        guard let collectionView = collectionView else { return }
+        for index in 0...Constants.maxCellIndex {
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell,
+                let skill = cell.skill else { continue }
+            let row = index/Int(Constants.itemsPerRow)
+            resetCell(cell: cell, withSkill: skill, atRow: row)
+            cell.updateColor()
+        }
+        updateRequiredLevelLabel()
+        updateRemainingPointsLabel()
     }
 }
 

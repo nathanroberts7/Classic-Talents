@@ -22,24 +22,7 @@ class TalentCell: UICollectionViewCell {
     
     var isAvailable: Bool = false {
         didSet {
-            switch isAvailable {
-            case true:
-                guard isGray else { return }
-                countLabel?.textColor = .green
-                skillImageView.image = skillImage
-                background.backgroundColor = .green
-                downArrow?.image = downArrowImage
-                downRightArrow?.image = downRightArrowImage
-                isGray = false
-            case false:
-                guard !isGray else { return }
-                countLabel?.textColor = .gray
-                skillImageView.image = skillBWImage
-                background.backgroundColor = .gray
-                downArrow?.image = downArrowBWImage
-                downRightArrow?.image = downRightArrowBWImage
-                isGray = true
-            }
+            updateColors()
         }
     }
     
@@ -140,7 +123,7 @@ class TalentCell: UICollectionViewCell {
                                            width: contentView.frame.width * 0.35,
                                            height: contentView.frame.height * 0.20))
         countLabel.font = UIFont(name: "Arial", size: 14)
-        //countLabel.sizeToFit()
+        countLabel.sizeToFit()
         contentView.addSubview(countLabel)
         countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
         countLabel.backgroundColor = .black
@@ -157,8 +140,48 @@ class TalentCell: UICollectionViewCell {
         dependentID = dependencyID
     }
     
-    func updateCount() {
+    func updateText() {
         guard let skill = skill else { return }
         countLabel.text = "\(skill.currentRank)/\(skill.maxRank)"
+    }
+    
+    func updateColor() {
+        guard let skill = skill else { return }
+        var newLabelColor: UIColor
+        var newBackgroundColor: UIColor
+        switch (isAvailable, skill.currentRank == skill.maxRank) {
+        case (true, true):
+            newLabelColor = .yellow
+            newBackgroundColor = .yellow
+        case (true, false):
+            newLabelColor = .green
+            newBackgroundColor = .green
+        case (false, _):
+            newLabelColor = .gray
+            newBackgroundColor = .gray
+        }
+        countLabel?.textColor = newLabelColor
+        background.backgroundColor = newBackgroundColor
+    }
+    
+    private func updateColors() {
+        switch isAvailable {
+        case true:
+            guard isGray else { return }
+            countLabel?.textColor = .green
+            background.backgroundColor = .green
+            skillImageView.image = skillImage
+            downArrow?.image = downArrowImage
+            downRightArrow?.image = downRightArrowImage
+            isGray = false
+        case false:
+            guard !isGray else { return }
+            countLabel?.textColor = .gray
+            background.backgroundColor = .gray
+            skillImageView.image = skillBWImage
+            downArrow?.image = downArrowBWImage
+            downRightArrow?.image = downRightArrowBWImage
+            isGray = true
+        }
     }
 }
