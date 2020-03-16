@@ -21,11 +21,11 @@ class TabViewController: UITabBarController {
                 let name = specialization.name
                 let storyboard = UIStoryboard(name: "Talent", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "Talent") as? TalentViewController else { return }
-                let tabImage = FetchData.getSpecImage(className: currentClass.name,specName: name).resizeMyImage(newWidth: 24).roundMyImage.withRenderingMode(.alwaysOriginal)
+                let tabImage = FetchData.getSpecImage(className: currentClass.name,specName: name).resizeMyImage(newWidth: 27).roundMyImage.withRenderingMode(.alwaysOriginal)
                 let tab = UITabBarItem(title: name, image: tabImage, selectedImage: nil)
                 viewController.tabBarItem = tab
                 viewController.configure(skills: skills,
-                                         grid: self.getGrid(withSpecialization: name),
+                                         grid: self.getGrid(specialization: name, class: currentClass.name),
                                          image: FetchData.getSpecBackgroundImage(className: currentClass.name, specName: name),
                                          reference: self)
                 if self.viewControllers == nil {
@@ -44,7 +44,7 @@ class TabViewController: UITabBarController {
         currentClass = talentData.classes.first(where: { $0.name == "Mage" })
     }
     
-    private func getGrid(withSpecialization specialization: String) -> [Int] {
+    private func getGrid(specialization: String, class: String) -> [Int] {
         // Make sure to handle class specific cases via currentClass!
         switch specialization {
         case "Arcane":
