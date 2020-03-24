@@ -71,7 +71,9 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill, cell.isAvailable else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill else { return }
+        
+        guard cell.isAvailable else { toggleToolTip(cell: cell); return }
         
         defer {
             cell.updateColor()
@@ -83,14 +85,14 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         // If all possible points were used, reset the cell the user taps next.
         guard let tabView = tabViewReference, tabView.pointsRemaining > 0,
-            skill.currentRank < skill.maxRank else { resetCell(cell: cell, withSkill: skill, atRow: row); return }
+            skill.currentRank < skill.maxRank else { resetCell(cell: cell, withSkill: skill, atRow: row); toggleToolTip(cell: cell); return }
         
         // Tap to increase the rank. If already max, then reset.
         increaseCellRank(cell: cell, atRow: row)
         
         cell.updateText()
         updateCellAvailability(forRow: row)
-        toggleToolTip(skill: skill, cellFrame: cell.frame)
+        toggleToolTip(cell: cell)
     }
     
     private func updateCellAvailability(forRow row: Int) {
@@ -158,9 +160,9 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         requiredLevelLabel.text = "Required Level: \((51 - points) + 9)"
     }
     
-    private func toggleToolTip(skill: SkillElement, cellFrame: CGRect) {
+    private func toggleToolTip(cell: TalentCell) {
         if toolTip != nil { toolTip?.removeFromSuperview() }
-        toolTip = ToolTip(skill: skill, cellFrame: cellFrame)
+        toolTip = ToolTip(cell: cell)
         guard let toolTip = toolTip else { return }
         view.addSubview(toolTip)
     }

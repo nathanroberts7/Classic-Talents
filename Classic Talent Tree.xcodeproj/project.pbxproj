@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81198F6B242A6C33005DB2FE /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 81198F6A242A6C33005DB2FE /* Roboto */; };
 		814C44E92408DAE60062CA53 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C44E82408DAE60062CA53 /* TabBar.storyboard */; };
 		814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C44EA2408DB0C0062CA53 /* TabViewController.swift */; };
 		814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C8F8624046AC700BD4D7E /* Talent.storyboard */; };
@@ -18,6 +19,7 @@
 		819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B652403C19B00518FFB /* SceneDelegate.swift */; };
 		819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6C2403C19C00518FFB /* Assets.xcassets */; };
 		819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */; };
+		81A1BA5A242AAC9500E0840B /* ToolTip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A1BA59242AAC9500E0840B /* ToolTip.xib */; };
 		81AA405E241C6B7800F95846 /* Classic+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA405D241C6B7800F95846 /* Classic+UIImage.swift */; };
 		81CEE6B92429D4CA00E9E76F /* ToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CEE6B82429D4CA00E9E76F /* ToolTip.swift */; };
 		81F9A9942406425F009D8E3E /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A9932406425F009D8E3E /* Talents.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81198F6A242A6C33005DB2FE /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
 		814C44E82408DAE60062CA53 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		814C44EA2408DB0C0062CA53 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		814C8F8624046AC700BD4D7E /* Talent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Talent.storyboard; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		819F9B6C2403C19C00518FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819F9B6F2403C19C00518FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		819F9B712403C19C00518FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A1BA59242AAC9500E0840B /* ToolTip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolTip.xib; sourceTree = "<group>"; };
 		81AA405D241C6B7800F95846 /* Classic+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIImage.swift"; sourceTree = "<group>"; };
 		81CEE6B82429D4CA00E9E76F /* ToolTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTip.swift; sourceTree = "<group>"; };
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
@@ -57,6 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81198F68242A6BFC005DB2FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				819F9B6C2403C19C00518FFB /* Assets.xcassets */,
+				81198F69242A6C0F005DB2FE /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		81198F69242A6C0F005DB2FE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81198F6A242A6C33005DB2FE /* Roboto */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		81198F6E242A7D45005DB2FE /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				81A1BA59242AAC9500E0840B /* ToolTip.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		818B16F824073FCB002AE55F /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +108,6 @@
 		818B16FC2407A184002AE55F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				819F9B6C2403C19C00518FFB /* Assets.xcassets */,
 				819F9B712403C19C00518FFB /* Info.plist */,
 				819F9B632403C19B00518FFB /* AppDelegate.swift */,
 				819F9B652403C19B00518FFB /* SceneDelegate.swift */,
@@ -106,17 +134,19 @@
 		819F9B622403C19B00518FFB /* Classic Talent Tree */ = {
 			isa = PBXGroup;
 			children = (
-				81AA405C241C6B6700F95846 /* Extensions */,
 				814C44EA2408DB0C0062CA53 /* TabViewController.swift */,
 				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
 				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
 				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
 				81F9A998240649E0009D8E3E /* FetchData.swift */,
 				81CEE6B82429D4CA00E9E76F /* ToolTip.swift */,
-				818B16F924073FE8002AE55F /* Storyboards */,
-				818B16F824073FCB002AE55F /* Data */,
-				81F9A99724064936009D8E3E /* Models */,
 				818B16FC2407A184002AE55F /* Configuration */,
+				818B16F824073FCB002AE55F /* Data */,
+				81AA405C241C6B6700F95846 /* Extensions */,
+				81F9A99724064936009D8E3E /* Models */,
+				81198F68242A6BFC005DB2FE /* Resources */,
+				818B16F924073FE8002AE55F /* Storyboards */,
+				81198F6E242A7D45005DB2FE /* Xibs */,
 			);
 			path = "Classic Talent Tree";
 			sourceTree = "<group>";
@@ -196,10 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				814C44E92408DAE60062CA53 /* TabBar.storyboard in Resources */,
+				81198F6B242A6C33005DB2FE /* Roboto in Resources */,
 				819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */,
 				819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */,
 				814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */,
 				81F9A99624064306009D8E3E /* talent-data.json in Resources */,
+				81A1BA5A242AAC9500E0840B /* ToolTip.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
