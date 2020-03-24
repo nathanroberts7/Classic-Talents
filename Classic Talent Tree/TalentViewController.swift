@@ -20,6 +20,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet private var requiredLevelLabel: UILabel!
     @IBOutlet private var backgroundImageView: UIImageView!
     private var backgroundImage: UIImage!
+    private var toolTip: ToolTip?
     
     private var talentDataSource: TalentDataSource = TalentDataSource()
     
@@ -89,6 +90,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.updateText()
         updateCellAvailability(forRow: row)
+        toggleToolTip(skill: skill, cellFrame: cell.frame)
     }
     
     private func updateCellAvailability(forRow row: Int) {
@@ -156,6 +158,14 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         requiredLevelLabel.text = "Required Level: \((51 - points) + 9)"
     }
     
+    private func toggleToolTip(skill: SkillElement, cellFrame: CGRect) {
+        if toolTip != nil { toolTip?.removeFromSuperview() }
+        toolTip = ToolTip(skill: skill, cellFrame: cellFrame)
+        guard let toolTip = toolTip else { return }
+        view.addSubview(toolTip)
+    }
+    
+    // IBActions:
     @IBAction func resetPoints(_ sender: UIButton) {
         guard let collectionView = collectionView else { return }
         for index in 0...Constants.maxCellIndex {

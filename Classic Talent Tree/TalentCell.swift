@@ -15,7 +15,6 @@ protocol TalentCellDelegate: class {
 
 class TalentCell: UICollectionViewCell {
     
-    
     var skill: SkillElement?
     
     weak var delegate: TalentCellDelegate?
