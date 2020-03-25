@@ -92,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				81F9A99524064306009D8E3E /* talent-data.json */,
+				81F9A998240649E0009D8E3E /* FetchData.swift */,
 				818B16FA2407401E002AE55F /* TalentData.swift */,
 			);
 			path = Data;
@@ -137,20 +138,27 @@
 			isa = PBXGroup;
 			children = (
 				814C44EA2408DB0C0062CA53 /* TabViewController.swift */,
-				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
 				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
 				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
-				81F9A998240649E0009D8E3E /* FetchData.swift */,
-				81CEE6B82429D4CA00E9E76F /* ToolTip.swift */,
 				818B16FC2407A184002AE55F /* Configuration */,
 				818B16F824073FCB002AE55F /* Data */,
 				81AA405C241C6B6700F95846 /* Extensions */,
 				81F9A99724064936009D8E3E /* Models */,
 				81198F68242A6BFC005DB2FE /* Resources */,
 				818B16F924073FE8002AE55F /* Storyboards */,
+				81A1BA5D242AFCB200E0840B /* Views+Cells */,
 				81198F6E242A7D45005DB2FE /* Xibs */,
 			);
 			path = "Classic Talent Tree";
+			sourceTree = "<group>";
+		};
+		81A1BA5D242AFCB200E0840B /* Views+Cells */ = {
+			isa = PBXGroup;
+			children = (
+				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
+				81CEE6B82429D4CA00E9E76F /* ToolTip.swift */,
+			);
+			path = "Views+Cells";
 			sourceTree = "<group>";
 		};
 		81AA405C241C6B6700F95846 /* Extensions */ = {

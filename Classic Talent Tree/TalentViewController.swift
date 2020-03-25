@@ -27,7 +27,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     enum Constants {
         static let itemsPerRow: CGFloat = 4
-        static let cellSpacing: CGFloat = 15
+        static let cellSpacing: CGFloat = 10
         static let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 50.0, left: 30.0, bottom: 50.0, right: 30.0)
         static let cellIdentifier: String = "talent"
         static let maxCellIndex: Int = 27
@@ -41,6 +41,11 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView?.dataSource = talentDataSource
         collectionView?.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
         backgroundImageView.image = backgroundImage
+        
+        // Tap Gesture for Tool Tip Removal
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.removeToolTip))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +76,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.cellSpacing
     }
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill else { return }
         
@@ -167,6 +172,10 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         toolTip = ToolTip(cell: cell, specName: specName)
         guard let toolTip = toolTip else { return }
         view.addSubview(toolTip)
+    }
+    
+    @objc private func removeToolTip() {
+        toolTip?.removeFromSuperview()
     }
     
     // IBActions:
