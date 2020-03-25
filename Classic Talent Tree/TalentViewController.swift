@@ -12,6 +12,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     @IBOutlet var collectionView: UICollectionView?
     private var tabViewReference: TabViewController?
+    private var specName: String!
     private var pointCount: Int = 0
     private var rowRequirement = [0, 5, 10, 15, 20, 25, 30]
     private var rowPointCount = [0, 0, 0, 0, 0, 0, 0]
@@ -48,11 +49,12 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         updateRemainingPointsLabel()
     }
     
-    func configure(skills: [SkillElement], grid: [Int], image: UIImage, reference: TabViewController) {
+    func configure(skills: [SkillElement], grid: [Int], image: UIImage, name: String, reference: TabViewController) {
         talentDataSource.configure(withSkills: skills, grid: grid, delegate: self)
         collectionView?.reloadData()
         tabViewReference = reference
         backgroundImage = image
+        specName = name
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -73,7 +75,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TalentCell, let skill = cell.skill else { return }
         
-        guard cell.isAvailable else { toggleToolTip(cell: cell); return }
+        guard cell.isAvailable else { toggleToolTip(cell: cell, specName: specName); return }
         
         defer {
             cell.updateColor()
@@ -85,14 +87,14 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         // If all possible points were used, reset the cell the user taps next.
         guard let tabView = tabViewReference, tabView.pointsRemaining > 0,
-            skill.currentRank < skill.maxRank else { resetCell(cell: cell, withSkill: skill, atRow: row); toggleToolTip(cell: cell); return }
+            skill.currentRank < skill.maxRank else { resetCell(cell: cell, withSkill: skill, atRow: row); toggleToolTip(cell: cell, specName: specName); return }
         
         // Tap to increase the rank. If already max, then reset.
         increaseCellRank(cell: cell, atRow: row)
         
         cell.updateText()
         updateCellAvailability(forRow: row)
-        toggleToolTip(cell: cell)
+        toggleToolTip(cell: cell, specName: specName)
     }
     
     private func updateCellAvailability(forRow row: Int) {
@@ -160,9 +162,9 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         requiredLevelLabel.text = "Required Level: \((51 - points) + 9)"
     }
     
-    private func toggleToolTip(cell: TalentCell) {
+    private func toggleToolTip(cell: TalentCell, specName: String) {
         if toolTip != nil { toolTip?.removeFromSuperview() }
-        toolTip = ToolTip(cell: cell)
+        toolTip = ToolTip(cell: cell, specName: specName)
         guard let toolTip = toolTip else { return }
         view.addSubview(toolTip)
     }
@@ -179,6 +181,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         updateRequiredLevelLabel()
         updateRemainingPointsLabel()
+        if toolTip != nil { toolTip?.removeFromSuperview() }
     }
 }
 

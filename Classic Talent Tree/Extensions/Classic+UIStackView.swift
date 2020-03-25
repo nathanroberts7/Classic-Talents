@@ -8,8 +8,13 @@
 
 import UIKit
 
-extension UIView {
-    class func fromNib<T: UIView>() -> T {
-        return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+extension UIStackView {
+    func addBackground(color: UIColor, cornerRadius: CGFloat) {
+        let subView = UIView(frame: CGRect(x: bounds.minX - 10, y: bounds.minY - 10, width: bounds.width + 20, height: bounds.height + 20))
+        subView.backgroundColor = color
+        subView.clipsToBounds = true
+        subView.layer.cornerRadius = cornerRadius
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
     }
 }

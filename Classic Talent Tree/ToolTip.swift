@@ -10,7 +10,7 @@ import UIKit
 
 class ToolTip: UIView {
     
-    @IBOutlet private var contentView: UIView!
+    @IBOutlet private var contentView: UIStackView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var rankLabel: UILabel!
     @IBOutlet var currentRankStackView: UIStackView!
@@ -18,48 +18,43 @@ class ToolTip: UIView {
     @IBOutlet var currentRankDescription: UILabel!
     @IBOutlet var nextRankDescription: UILabel!
     @IBOutlet var requirementsLabel: UILabel!
-    
+    @IBOutlet var contentStackView: UIStackView!
     
     private enum Constants {
         static let width: CGFloat = UIScreen.main.bounds.width - 58
         static let xValue: CGFloat = 29
         static let cornerRadius: CGFloat = 8
-        static let spacer: CGFloat = 20
+        static let spacer: CGFloat = 10
     }
         
-    convenience init(cell: TalentCell) {
+    convenience init(cell: TalentCell, specName: String) {
         self.init()
         setupNib(cellFrame: cell.frame)
-        configure(cell: cell)
+        configure(cell: cell, specName: specName)
     }
 
     private func setupNib(cellFrame: CGRect) {
         // Load Nib:
         Bundle.main.loadNibNamed("ToolTip", owner: self, options: nil)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
-        
         // Setup contentView Layout/Constraints
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = Constants.cornerRadius
-        
-        // Setup view frame - determine if the tool tip needs to be below/above the cell
-        let distanceToBottom = UIScreen.main.bounds.height - cellFrame.maxY
-        let yValue: CGFloat
-        if distanceToBottom > contentView.frame.height + Constants.spacer * 10 {
-            yValue = cellFrame.maxY + Constants.spacer + cellFrame.height/2
-        } else {
-            yValue = cellFrame.minY - Constants.spacer * 2 - cellFrame.height
-        }
-        frame = CGRect(x: Constants.xValue, y: yValue, width: Constants.width, height: contentView.frame.height)
+        widthAnchor.constraint(equalToConstant: Constants.width).isActive = true
+        contentView.autoresizingMask = .flexibleBottomMargin
+        contentStackView.addBackground(color: .darkGray, cornerRadius: Constants.cornerRadius)
+        updateFrame(cellFrame: cellFrame)
     }
     
-    private func configure(cell: TalentCell) {
+    private func configure(cell: TalentCell, specName: String) {
         guard let skill = cell.skill else { return }
+        
+        defer {
+           contentStackView.addBackground(color: .darkGray, cornerRadius: Constants.cornerRadius)
+        }
         
         titleLabel.text = skill.name
         rankLabel.text = "Rank \(skill.currentRank)/\(skill.maxRank)"
@@ -69,7 +64,7 @@ class ToolTip: UIView {
             nextRankDescription.text = skill.rankDescription.first
             if let requiredPoints = skill.requirements?.specPoints {
                 requirementsLabel.isHidden = false
-                requirementsLabel.text = "Needs \(requiredPoints) points in the TEST tree."
+                requirementsLabel.text = "Needs \(requiredPoints) points in the \(specName) tree."
             }
             return
         }
@@ -88,5 +83,19 @@ class ToolTip: UIView {
         
         currentRankDescription.text = skill.rankDescription[skill.currentRank - 1]
         nextRankDescription.text = skill.rankDescription[skill.currentRank]
+    }
+
+    private func updateFrame(cellFrame: CGRect) {
+        // Determine if the tool tip needs to be below/above the cell
+//        contentView.setNeedsLayout()
+        //contentView.layoutIfNeeded()
+        let distanceToBottom = UIScreen.main.bounds.height - cellFrame.maxY
+        let yValue: CGFloat
+        if distanceToBottom > contentView.frame.height + Constants.spacer * 10 {
+           yValue = cellFrame.maxY + Constants.spacer + cellFrame.height/2
+        } else {
+           yValue = cellFrame.minY - Constants.spacer - cellFrame.height
+        }
+        frame = CGRect(x: Constants.xValue, y: yValue, width: Constants.width, height: contentView.frame.height)
     }
 }

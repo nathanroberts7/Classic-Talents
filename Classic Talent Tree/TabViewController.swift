@@ -27,6 +27,7 @@ class TabViewController: UITabBarController {
                 viewController.configure(skills: skills,
                                          grid: self.getGrid(specialization: name, class: currentClass.name),
                                          image: FetchData.getSpecBackgroundImage(className: currentClass.name, specName: name),
+                                         name: name,
                                          reference: self)
                 if self.viewControllers == nil {
                     self.viewControllers = [viewController]
