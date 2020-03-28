@@ -41,6 +41,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView?.dataSource = talentDataSource
         collectionView?.register(TalentCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
         backgroundImageView.image = backgroundImage
+        collectionView?.reloadData()
         
         // Tap Gesture for Tool Tip Removal
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.removeToolTip))
@@ -52,6 +53,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidAppear(animated)
         updateRequiredLevelLabel()
         updateRemainingPointsLabel()
+        updateCellAvailability(forRow: 0)
     }
     
     func configure(skills: [SkillElement], grid: [Int], image: UIImage, name: String, reference: TabViewController) {
@@ -105,8 +107,8 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     private func updateCellAvailability(forRow row: Int) {
         guard let collectionView = collectionView else { return }
         for index in 0...Constants.maxCellIndex {
-            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell,
-                let pointRequirement = cell.skill?.requirements?.specPoints else { continue }
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell else { continue }
+            let pointRequirement = cell.skill?.requirements?.specPoints ?? 0
             
             // If total pointCount does not equal skill requirement, make it unavailable.
             guard pointCount >= pointRequirement else { cell.isAvailable = false; continue }
@@ -140,7 +142,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     private func currentRowPointCount(toRow row: Int) -> Int {
         return rowPointCount[0...row].reduce(0, +)
     }
-    
+
     private func resetCell(cell: TalentCell, withSkill skill: SkillElement, atRow row: Int) {
         cell.skill?.currentRank = 0
         rowPointCount[row] -= skill.currentRank
@@ -198,12 +200,39 @@ extension TalentViewController: TalentCellDelegate {
     func talentCell(_ talentCell: TalentCell, addDownArrowToID: Int) {
         guard let cell = collectionView?.visibleCells.first(where: { ($0 as? TalentCell)?.skill?.id == addDownArrowToID }) as? TalentCell else { return }
         let arrowView = UIImageView()
-        arrowView.image = UIImage(imageLiteralResourceName: Constants.downArrowIdentifier)
         collectionView?.addSubview(arrowView)
-        arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width/2 - 10,
-                                 y: cell.frame.origin.y + cell.frame.height - 2,
-                                 width: 20,
-                                 height: (talentCell.frame.minY - cell.frame.maxY) + 5)
+        
+        if cell.frame.midX < talentCell.frame.midX && cell.frame.midY < talentCell.frame.midY {
+            // Right + Down Arrow
+            let rightArrow = UIImage(imageLiteralResourceName: Constants.downArrowIdentifier).rotate(radians: CGFloat((3 * Double.pi)/2))
+            let downArrow = UIImage(imageLiteralResourceName: Constants.downArrowIdentifier)
+            let size = CGSize(width:(talentCell.frame.midX - cell.frame.maxX) + 10, height: (talentCell.frame.minY - cell.frame.midY))
+            UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+            rightArrow.draw(in: CGRect(x: 0, y: 0, width: size.width, height: 15))
+            downArrow.draw(in: CGRect(x: size.width - 15, y: 4, width: 20, height: size.height - 5))
+            guard let rightDownArrow: UIImage = UIGraphicsGetImageFromCurrentImageContext() else { return }
+            UIGraphicsEndImageContext()
+            arrowView.image = rightDownArrow
+            arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width - 2.5,
+                                     y: cell.frame.origin.y + cell.frame.height/2 - 10,
+                                     width: (talentCell.frame.midX - cell.frame.maxX) + 5,
+                                     height: (talentCell.frame.minY - cell.frame.midY) + 15)
+            
+        } else if cell.frame.midX < talentCell.frame.midX && cell.frame.midY == talentCell.frame.midY {
+            // Right Arrow (Rotate Down Arrow)
+            arrowView.image = UIImage(imageLiteralResourceName: Constants.downArrowIdentifier).rotate(radians: CGFloat((3 * Double.pi)/2))
+            arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width - 2,
+                                     y: cell.frame.origin.y + cell.frame.height/2 - 5,
+                                     width: (talentCell.frame.minX - cell.frame.maxX) + 5,
+                                     height: 20)
+        } else {
+            // Down Arrow
+            arrowView.image = UIImage(imageLiteralResourceName: Constants.downArrowIdentifier)
+            arrowView.frame = CGRect(x: cell.frame.origin.x + cell.frame.width/2 - 10,
+                                     y: cell.frame.origin.y + cell.frame.height - 2,
+                                     width: 20,
+                                     height: (talentCell.frame.minY - cell.frame.maxY) + 5)
+        }
         talentCell.downArrow = arrowView
     }
 }

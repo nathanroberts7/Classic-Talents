@@ -17,12 +17,13 @@ class TabViewController: UITabBarController {
         static let sideMenuButtonSizeRatio: CGFloat = 16
         static let talentInfoHeight: CGFloat = 35
         static let menuIcon: String = "menu-icon"
+        static let maxPoints: Int = 51
     }
     
     private var sideMenuView: RHSideButtons?
     private var sideMenuDataSource: SideMenuDataSource = SideMenuDataSource()
     
-    var pointsRemaining: Int = 51
+    var pointsRemaining: Int = Constants.maxPoints
     
     var currentClass: Class? {
         didSet {
@@ -53,7 +54,7 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
         guard let talentData = TalentData.data else { preconditionFailure() }
         tabBar.tintColor = .white
-        currentClass = talentData.classes.first(where: { $0.name.lowercased() == "mage" })
+        currentClass = talentData.classes.first(where: { $0.name.lowercased() == "druid" })
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -77,7 +78,11 @@ class TabViewController: UITabBarController {
                                      y: tabBar.frame.minY - safeAreaHeight - Constants.talentInfoHeight - UIScreen.main.bounds.height/Constants.sideMenuButtonSizeRatio)
         sideMenuView?.setTriggerButtonPosition(buttonPosition)
     }
-
+    
+    private func reset() {
+        self.viewControllers = nil
+        pointsRemaining = Constants.maxPoints
+    }
 }
 
 extension TabViewController: RHSideButtonsDelegate {
@@ -85,7 +90,7 @@ extension TabViewController: RHSideButtonsDelegate {
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
         guard let className = sideMenuDataSource.classChoices[index].className else { return }
         guard let talentData = TalentData.data else { return }
-        self.viewControllers = nil
+        reset()
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == className })
     }
     

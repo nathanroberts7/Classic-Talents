@@ -34,9 +34,6 @@ class TalentDataSource: NSObject, UICollectionViewDataSource {
         let isNotEmpty = grid[indexPath.item]
         let skill: SkillElement? = isNotEmpty != 0 ? skills.removeFirst() : nil
         cell.configure(withSkill: skill, delegate: delegate)
-        if indexPath.item < 3 {
-            cell.isAvailable = true
-        }
         return cell
     }
 }
