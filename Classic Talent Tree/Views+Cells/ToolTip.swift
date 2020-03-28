@@ -21,10 +21,10 @@ class ToolTip: UIView {
     @IBOutlet private var contentStackView: UIStackView!
     
     private enum Constants {
-        static let width: CGFloat = UIScreen.main.bounds.width - 58
-        static let xValue: CGFloat = 29
+        static let width: CGFloat = UIScreen.main.bounds.width - 50
+        static let xValue: CGFloat = 25
         static let cornerRadius: CGFloat = 8
-        static let spacer: CGFloat = 12
+        static let spacer: CGFloat = 10
     }
         
     convenience init(cell: TalentCell, specName: String) {
@@ -44,7 +44,7 @@ class ToolTip: UIView {
         contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        contentStackView.addBackground(color: .darkGray, cornerRadius: Constants.cornerRadius)
+        contentStackView.addBackground(color: .spookyMineshaft, cornerRadius: Constants.cornerRadius)
         initializeFrame(cellFrame: cellFrame)
     }
     
@@ -52,7 +52,7 @@ class ToolTip: UIView {
         guard let skill = cell.skill else { return }
         
         defer {
-           contentStackView.addBackground(color: .darkGray, cornerRadius: Constants.cornerRadius)
+            contentStackView.addBackground(color: .spookyMineshaft, cornerRadius: Constants.cornerRadius)
         }
         
         titleLabel.text = skill.name
