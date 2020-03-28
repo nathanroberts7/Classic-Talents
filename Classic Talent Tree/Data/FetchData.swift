@@ -34,4 +34,23 @@ class FetchData {
             .lowercased()
         return UIImage(imageLiteralResourceName: skillPath)
     }
+    
+    static func getClassNames() -> [String] {
+        // Returns all class names in order of popularity
+        return ["warrior", "mage", "rogue", "priest", "warlock", "hunter", "druid", "shaman", "paladin"]
+    }
+    
+    static func getSpecGrid(specialization: String, class: String) -> [Int] {
+        // Make sure to handle class specific cases via currentClass!
+        switch specialization {
+        case "Arcane":
+            return [1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0]
+        case "Fire":
+            return [0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+        case "Frost":
+            return [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+        default:
+            return [0]
+        }
+    }
 }

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194B2C3E9E3B9A60935FA05A /* Pods_Classic_Talent_Tree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D82D596B954D814E13E53 /* Pods_Classic_Talent_Tree.framework */; };
 		81198F6B242A6C33005DB2FE /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 81198F6A242A6C33005DB2FE /* Roboto */; };
 		814C44E92408DAE60062CA53 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C44E82408DAE60062CA53 /* TabBar.storyboard */; };
 		814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C44EA2408DB0C0062CA53 /* TabViewController.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277C63F5BED9B4F346C40A16 /* Pods-Classic Talent Tree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classic Talent Tree.debug.xcconfig"; path = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree.debug.xcconfig"; sourceTree = "<group>"; };
+		4754159DE27B45B0FBDB1202 /* Pods-Classic Talent Tree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classic Talent Tree.release.xcconfig"; path = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree.release.xcconfig"; sourceTree = "<group>"; };
 		81198F6A242A6C33005DB2FE /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
 		814C44E82408DAE60062CA53 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		814C44EA2408DB0C0062CA53 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		81F9A99524064306009D8E3E /* talent-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "talent-data.json"; sourceTree = "<group>"; };
 		81F9A998240649E0009D8E3E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		A19D82D596B954D814E13E53 /* Pods_Classic_Talent_Tree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Classic_Talent_Tree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194B2C3E9E3B9A60935FA05A /* Pods_Classic_Talent_Tree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FC8E45D288C054B21D54E48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				277C63F5BED9B4F346C40A16 /* Pods-Classic Talent Tree.debug.xcconfig */,
+				4754159DE27B45B0FBDB1202 /* Pods-Classic Talent Tree.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		81198F68242A6BFC005DB2FE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +139,8 @@
 			children = (
 				819F9B622403C19B00518FFB /* Classic Talent Tree */,
 				819F9B612403C19B00518FFB /* Products */,
+				4FC8E45D288C054B21D54E48 /* Pods */,
+				B4D4188A71477C9538898247 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +197,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B4D4188A71477C9538898247 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A19D82D596B954D814E13E53 /* Pods_Classic_Talent_Tree.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 819F9B742403C19C00518FFB /* Build configuration list for PBXNativeTarget "Classic Talent Tree" */;
 			buildPhases = (
+				7106F731AF118EAC18ABFE83 /* [CP] Check Pods Manifest.lock */,
 				819F9B5C2403C19B00518FFB /* Sources */,
 				819F9B5D2403C19B00518FFB /* Frameworks */,
 				819F9B5E2403C19B00518FFB /* Resources */,
+				BD1B4583DFA1800ECB0DA170 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +276,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7106F731AF118EAC18ABFE83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Classic Talent Tree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD1B4583DFA1800ECB0DA170 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		819F9B5C2403C19B00518FFB /* Sources */ = {
@@ -402,6 +470,7 @@
 		};
 		819F9B752403C19C00518FFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277C63F5BED9B4F346C40A16 /* Pods-Classic Talent Tree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,6 +489,7 @@
 		};
 		819F9B762403C19C00518FFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4754159DE27B45B0FBDB1202 /* Pods-Classic Talent Tree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

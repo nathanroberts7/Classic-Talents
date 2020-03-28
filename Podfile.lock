@@ -1,0 +1,16 @@
+PODS:
+  - RHSideButtons (1.1.0)
+
+DEPENDENCIES:
+  - RHSideButtons
+
+SPEC REPOS:
+  trunk:
+    - RHSideButtons
+
+SPEC CHECKSUMS:
+  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
+
+PODFILE CHECKSUM: 6cee3798b3dd9221c734141c4464c8442cf8a84a
+
+COCOAPODS: 1.8.4
