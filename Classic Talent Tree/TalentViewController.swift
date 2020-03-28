@@ -235,5 +235,9 @@ extension TalentViewController: TalentCellDelegate {
         }
         talentCell.downArrow = arrowView
     }
+    
+    func didPan(_ talentCell: TalentCell) {
+        toggleToolTip(cell: talentCell, specName: specName)
+    }
 }
 

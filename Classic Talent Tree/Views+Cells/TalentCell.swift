@@ -11,6 +11,7 @@ import UIKit
 
 protocol TalentCellDelegate: class {
     func talentCell(_: TalentCell, addDownArrowToID: Int)
+    func didPan(_: TalentCell)
 }
 
 class TalentCell: UICollectionViewCell {
@@ -132,6 +133,9 @@ class TalentCell: UICollectionViewCell {
         countLabel.sizeToFit()
         countLabel.layoutIfNeeded()
         
+        // Add pan gesture
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.didPan))
+        self.addGestureRecognizer(panGesture)
         
         // Programmatically add arrows for dependent talents
         guard let dependencyID = skill.requirements?.skill?.id else { return }
@@ -182,5 +186,9 @@ class TalentCell: UICollectionViewCell {
             downRightArrow?.image = downRightArrowBWImage
             isGray = true
         }
+    }
+    
+    @objc private func didPan() {
+        delegate?.didPan(self)
     }
 }
