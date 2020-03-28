@@ -12,11 +12,16 @@ import RHSideButtons
 
 class TabViewController: UITabBarController {
     
-    private var sideButtonsView: RHSideButtons?
-    private var classChoices = [RHButtonView]()
-    fileprivate let triggerButtonMargin = CGFloat(70)
-
-
+    private enum Constants {
+        static let sideMenuButtonMargin: CGFloat = 10
+        static let sideMenuButtonSizeRatio: CGFloat = 16
+        static let talentInfoHeight: CGFloat = 35
+        static let menuIcon: String = "menu-icon"
+    }
+    
+    private var sideMenuView: RHSideButtons?
+    private var sideMenuDataSource: SideMenuDataSource = SideMenuDataSource()
+    
     var pointsRemaining: Int = 51
     
     var currentClass: Class? {
@@ -27,11 +32,11 @@ class TabViewController: UITabBarController {
                 let name = specialization.name
                 let storyboard = UIStoryboard(name: "Talent", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "Talent") as? TalentViewController else { return }
-                let tabImage = FetchData.getSpecImage(className: currentClass.name,specName: name).resizeMyImage(newWidth: 27).roundMyImage.withRenderingMode(.alwaysOriginal)
+                let tabImage = FetchData.getSpecImage(className: currentClass.name, specName: name).resizeMyImage(newWidth: 27).roundMyImage.withRenderingMode(.alwaysOriginal)
                 let tab = UITabBarItem(title: name, image: tabImage, selectedImage: nil)
                 viewController.tabBarItem = tab
                 viewController.configure(skills: skills,
-                                         grid: FetchData.getSpecGrid(specialization: name, class: currentClass.name),
+                                         grid: FetchData.getSpecGrid(specialization: name, className: currentClass.name),
                                          image: FetchData.getSpecBackgroundImage(className: currentClass.name, specName: name),
                                          name: name,
                                          reference: self)
@@ -49,7 +54,6 @@ class TabViewController: UITabBarController {
         guard let talentData = TalentData.data else { preconditionFailure() }
         tabBar.tintColor = .white
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == "mage" })
-        //configureMenu()
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -58,48 +62,34 @@ class TabViewController: UITabBarController {
     }
     
     private func configureMenu() {
-        let triggerButton = RHTriggerButtonView(pressedImage: UIImage(imageLiteralResourceName: "menu-icon")) {
-            $0.image = UIImage(named: "menu-icon")
+        let triggerButton = RHTriggerButtonView(pressedImage: UIImage(imageLiteralResourceName: Constants.menuIcon)) {
+            $0.image = UIImage(named: Constants.menuIcon)
             $0.hasShadow = false
         }
-         
-        FetchData.getClassNames().forEach() { className in
-            let button = RHButtonView {
-                $0.image = UIImage(named: "icon-\(className)")
-                $0.hasShadow = false
-            }
-            classChoices.append(button)
-        }
-        sideButtonsView?.reloadButtons()
-        sideButtonsView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
-        
-        sideButtonsView?.delegate = self
-        sideButtonsView?.dataSource = self
+    
+        sideMenuView?.reloadButtons()
+        sideMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
+        sideMenuView?.delegate = self
+        sideMenuView?.dataSource = sideMenuDataSource
 
         let safeAreaHeight = (UIScreen.main.bounds.height - view.safeAreaLayoutGuide.layoutFrame.size.height)/2
-        sideButtonsView?.setTriggerButtonPosition(CGPoint(x: UIScreen.main.bounds.width - UIScreen.main.bounds.height/16 - 10, y: tabBar.frame.minY - safeAreaHeight - 35 - UIScreen.main.bounds.height/16))
+        let buttonPosition = CGPoint(x: UIScreen.main.bounds.width - UIScreen.main.bounds.height/Constants.sideMenuButtonSizeRatio - Constants.sideMenuButtonMargin,
+                                     y: tabBar.frame.minY - safeAreaHeight - Constants.talentInfoHeight - UIScreen.main.bounds.height/Constants.sideMenuButtonSizeRatio)
+        sideMenuView?.setTriggerButtonPosition(buttonPosition)
     }
 
-}
-
-extension TabViewController: RHSideButtonsDataSource {
-    
-    func sideButtonsNumberOfButtons(_ sideButtons: RHSideButtons) -> Int {
-        return classChoices.count
-    }
-    
-    func sideButtons(_ sideButtons: RHSideButtons, buttonAtIndex index: Int) -> RHButtonView {
-        return classChoices[index]
-    }
 }
 
 extension TabViewController: RHSideButtonsDelegate {
     
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
-        print("🍭 button index tapped: \(index)")
+        guard let className = sideMenuDataSource.classChoices[index].className else { return }
+        guard let talentData = TalentData.data else { return }
+        self.viewControllers = nil
+        currentClass = talentData.classes.first(where: { $0.name.lowercased() == className })
     }
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
-        print("🍭 Trigger button")
+        // Do nothing.
     }
 }

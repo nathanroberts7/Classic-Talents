@@ -25,7 +25,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     private var talentDataSource: TalentDataSource = TalentDataSource()
     
-    enum Constants {
+    private enum Constants {
         static let itemsPerRow: CGFloat = 4
         static let cellSpacing: CGFloat = 10
         static let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 50.0, left: 30.0, bottom: 50.0, right: 30.0)

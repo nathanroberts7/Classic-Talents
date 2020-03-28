@@ -40,14 +40,14 @@ class FetchData {
         return ["warrior", "mage", "rogue", "priest", "warlock", "hunter", "druid", "shaman", "paladin"]
     }
     
-    static func getSpecGrid(specialization: String, class: String) -> [Int] {
+    static func getSpecGrid(specialization: String, className: String) -> [Int] {
         // Make sure to handle class specific cases via currentClass!
-        switch specialization {
-        case "Arcane":
+        switch (specialization, className) {
+        case ("Arcane", _):
             return [1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0]
-        case "Fire":
+        case ("Fire", _):
             return [0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0]
-        case "Frost":
+        case ("Frost", _):
             return [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0]
         default:
             return [0]
