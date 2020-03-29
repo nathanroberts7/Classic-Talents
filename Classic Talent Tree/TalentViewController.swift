@@ -193,6 +193,18 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         toolTip?.removeFromSuperview()
     }
     
+    func getPointAllocationData() -> [Int] {
+        // Data meant for saving/loading builds
+        var talentPoints: [Int] = []
+        guard let collectionView = collectionView else { return [0] }
+        for index in 0...Constants.maxCellIndex {
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell else { continue }
+            guard let rank = cell.skill?.currentRank else { continue }
+            talentPoints.append(rank)
+        }
+        return talentPoints
+    }
+    
     // IBActions:
     @IBAction func resetPoints(_ sender: UIButton) {
         guard let collectionView = collectionView else { return }

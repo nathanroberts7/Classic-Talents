@@ -27,6 +27,8 @@ class TabViewController: UITabBarController {
     private var settingsMenuView: RHSideButtons?
     private var settingsMenuDataSource: SettingsMenuDataSource = SettingsMenuDataSource()
     
+    private var buildManager: BuildManager = BuildManager()
+    
     var pointsRemaining: Int = Constants.maxPoints
     
     var currentClass: Class? {
@@ -134,7 +136,7 @@ extension TabViewController: RHSideButtonsDelegate {
         switch index {
         case 0:
             // Save
-            break
+            saveBuild()
         case 1:
             // Access Save Folder
             break
@@ -146,6 +148,41 @@ extension TabViewController: RHSideButtonsDelegate {
         default:
             return
         }
+    }
+    
+    private func saveBuild() {
+        guard let currentClass = currentClass else { return }
+        showInputDialog(title: "Save This \(currentClass.name) Build?",
+            subtitle: "Enter a name below.",
+            actionTitle: "Save",
+            cancelTitle: "Cancel",
+            inputPlaceholder: "Build Name",
+            inputKeyboardType: UIKeyboardType.default,
+            cancelHandler: nil) { name in
+                guard let name = name else { return }
+                self.handleSaveBuild(name: name, buildClass: currentClass)
+        }
+    }
+    
+    private func handleSaveBuild(name: String, buildClass: Class) {
+        var specPoints: [[Int]] = []
+        viewControllers?.forEach() { viewController in
+            guard let viewController = viewController as? TalentViewController else { return }
+            specPoints.append(viewController.getPointAllocationData())
+        }
+        guard specPoints.count == 3 else { return }
+        let build = Build(name: name, specPoints: specPoints, buildClass: buildClass)
+        buildManager.saveBuild(build: build) { result in
+            if !result {
+                self.showDuplicateEntryError()
+            }
+        }
+    }
+    
+    private func showDuplicateEntryError() {
+        let alert = UIAlertController(title: "Save Error", message: "A build with that name exists.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
