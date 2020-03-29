@@ -9,7 +9,7 @@
 import Foundation
 import RHSideButtons
 
-class SideMenuDataSource: RHSideButtonsDataSource {
+class ClassMenu: RHSideButtonsDataSource {
     
     var classChoices = [RHButtonView]()
     

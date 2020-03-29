@@ -1,0 +1,20 @@
+PODS:
+  - RHSideButtons (1.1.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - RHSideButtons
+  - Toast-Swift (~> 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - RHSideButtons
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 1d741ba429704a1485f1476a90290089914b2a9f
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,811 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16F4144AC4BB5E4C1BCC03080FE06B33 /* Pods-Classic Talent Tree-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE530CEC972A3297C110A1C2289FC64D /* Pods-Classic Talent Tree-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D1A8CE4745D75961AA3732842B8AD2 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBDFE0954A5BCB41E3D30DA031D780 /* Toast.swift */; };
+		4A1F2C6CF50AE906BFB40C8A3ED77C3C /* RHSideButtonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A565EA542436D61F2B384EE3FA9B3B0D /* RHSideButtonAnimator.swift */; };
+		545EB64C36DAE2361C8D680A59FF42AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0F1732A2D4DBA41714F9E205837D34 /* Foundation.framework */; };
+		5CAEC0275F0272085A283843E1B57D42 /* RHSideButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7FCEF63857AEFED375F2C3B125B3F /* RHSideButtons.swift */; };
+		6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEB7678731025900263F83909043BD0 /* Toast-Swift-dummy.m */; };
+		88951F4EC5DBAC6000AFEACED0C1D43E /* RHSideButtons-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5768BD0FF0EC12C2184EBB1F6058D0FE /* RHSideButtons-dummy.m */; };
+		89A0C0FE86CF8A7B6D2D04A43F4DBB61 /* RHSideButtonAnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203A228FE12230E733A423E46B5C63C /* RHSideButtonAnimatorProtocol.swift */; };
+		8F003DF08499D63225D6D62013BC8D12 /* RHSideButtons-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F35D045687A9E0E1FE568178E38EE1F /* RHSideButtons-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0F1732A2D4DBA41714F9E205837D34 /* Foundation.framework */; };
+		A292E554676685B5EEDDD0E46282EFA0 /* Pods-Classic Talent Tree-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDDBF4727FF29AE01F4ECF6973AE18B /* Pods-Classic Talent Tree-dummy.m */; };
+		C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6193BDF9256B1B2DC71E7CF8BFFB3D /* QuartzCore.framework */; };
+		C6C26E94A520826F08BBFE318CCB5064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0F1732A2D4DBA41714F9E205837D34 /* Foundation.framework */; };
+		D0E760F2DD740BA73969995251C5E64E /* RHTriggerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F177D258FF0A17A9710DA88333379C /* RHTriggerButtonView.swift */; };
+		E47A7E9AE9DC85C3DB4C34B5634544AD /* RHButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05992236E9907E02ADE796588E1FCB7 /* RHButtonView.swift */; };
+		F96C5D83171E139424E562D22DC0E233 /* RHButtonViewConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E17E5C9A7658B86583954C8F7CE9C /* RHButtonViewConfigProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EA2E3C30DEEFB4676B34E46F4A19EA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
+		8CFEC8DF1D608DDA264C8548ABBC7FA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F7E0B635700AA682AB4E838D48ACFD5;
+			remoteInfo = RHSideButtons;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02A4DF0D5142715BFA18FB80960E2F5E /* Pods-Classic Talent Tree.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Classic Talent Tree.modulemap"; sourceTree = "<group>"; };
+		0AC3B0F56D68EBFA6793AF60AE2B3145 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		1959D015D1E67FD55F6D6FF2E9E769E8 /* Pods-Classic Talent Tree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Classic Talent Tree.release.xcconfig"; sourceTree = "<group>"; };
+		386D96672F07BFBCB07BAA642EB6EAAE /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
+		42C10D517DF5F172EFEDF686B53E0B90 /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
+		467BF0DD668B265933E4F4CABB6F7166 /* Pods_Classic_Talent_Tree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Classic_Talent_Tree.framework; path = "Pods-Classic Talent Tree.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		469E17E5C9A7658B86583954C8F7CE9C /* RHButtonViewConfigProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHButtonViewConfigProtocol.swift; path = RHSideButtons/RHSideButtons/RHButtonViewConfigProtocol.swift; sourceTree = "<group>"; };
+		5107FC47786EED52B63829A9A4523B7D /* Pods-Classic Talent Tree-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Classic Talent Tree-frameworks.sh"; sourceTree = "<group>"; };
+		5768BD0FF0EC12C2184EBB1F6058D0FE /* RHSideButtons-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RHSideButtons-dummy.m"; sourceTree = "<group>"; };
+		6CE7FCEF63857AEFED375F2C3B125B3F /* RHSideButtons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHSideButtons.swift; path = RHSideButtons/RHSideButtons/RHSideButtons.swift; sourceTree = "<group>"; };
+		7203A228FE12230E733A423E46B5C63C /* RHSideButtonAnimatorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHSideButtonAnimatorProtocol.swift; path = RHSideButtons/RHSideButtons/RHSideButtonAnimatorProtocol.swift; sourceTree = "<group>"; };
+		75F40B7EC5C0D8A35630242FFD2D53B0 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		8334CF6009BEDB09D5840CA1AE70D8E8 /* RHSideButtons.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RHSideButtons.modulemap; sourceTree = "<group>"; };
+		84D1A8CE4745D75961AA3732842B8AD2 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		88F177D258FF0A17A9710DA88333379C /* RHTriggerButtonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHTriggerButtonView.swift; path = RHSideButtons/RHSideButtons/RHTriggerButtonView.swift; sourceTree = "<group>"; };
+		8BA918FB1FF3EB6BCCD6B4EDF8B482A0 /* Pods-Classic Talent Tree-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Classic Talent Tree-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8E842847CFF7DD01749EF2248A7D1050 /* RHSideButtons-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RHSideButtons-prefix.pch"; sourceTree = "<group>"; };
+		8F35D045687A9E0E1FE568178E38EE1F /* RHSideButtons-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RHSideButtons-umbrella.h"; sourceTree = "<group>"; };
+		94CD065442E3431655CBF4494D246C02 /* Pods-Classic Talent Tree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Classic Talent Tree.debug.xcconfig"; sourceTree = "<group>"; };
+		9B3BDB5A52FC7ECA185FE76108129D64 /* RHSideButtons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RHSideButtons.framework; path = RHSideButtons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EF0A8C366621424140239CC97127927 /* RHSideButtons.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RHSideButtons.xcconfig; sourceTree = "<group>"; };
+		A05992236E9907E02ADE796588E1FCB7 /* RHButtonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHButtonView.swift; path = RHSideButtons/RHSideButtons/RHButtonView.swift; sourceTree = "<group>"; };
+		A565EA542436D61F2B384EE3FA9B3B0D /* RHSideButtonAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RHSideButtonAnimator.swift; path = RHSideButtons/RHSideButtons/RHSideButtonAnimator.swift; sourceTree = "<group>"; };
+		A9EE6BAEEB191B1645EC8C4282789B5A /* RHSideButtons-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RHSideButtons-Info.plist"; sourceTree = "<group>"; };
+		BDEB7678731025900263F83909043BD0 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		CB50ED637B2E5450AE73674C5B575FE4 /* Pods-Classic Talent Tree-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Classic Talent Tree-acknowledgements.plist"; sourceTree = "<group>"; };
+		CB6193BDF9256B1B2DC71E7CF8BFFB3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		D57839488E30636D302143114B958CA9 /* Pods-Classic Talent Tree-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Classic Talent Tree-Info.plist"; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FBDFE0954A5BCB41E3D30DA031D780 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		EB0F1732A2D4DBA41714F9E205837D34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EE530CEC972A3297C110A1C2289FC64D /* Pods-Classic Talent Tree-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Classic Talent Tree-umbrella.h"; sourceTree = "<group>"; };
+		FDDDBF4727FF29AE01F4ECF6973AE18B /* Pods-Classic Talent Tree-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Classic Talent Tree-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A8DA7599E82AF651EA374D7C6101BA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545EB64C36DAE2361C8D680A59FF42AC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6102CF7EA55F5A7D669F88BF0D1A701F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */,
+				C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5812504F94B2F10D93B7BE3630C14F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C26E94A520826F08BBFE318CCB5064 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0002B0A5A0A9967BCC429C94347C471D /* Pods-Classic Talent Tree */ = {
+			isa = PBXGroup;
+			children = (
+				02A4DF0D5142715BFA18FB80960E2F5E /* Pods-Classic Talent Tree.modulemap */,
+				8BA918FB1FF3EB6BCCD6B4EDF8B482A0 /* Pods-Classic Talent Tree-acknowledgements.markdown */,
+				CB50ED637B2E5450AE73674C5B575FE4 /* Pods-Classic Talent Tree-acknowledgements.plist */,
+				FDDDBF4727FF29AE01F4ECF6973AE18B /* Pods-Classic Talent Tree-dummy.m */,
+				5107FC47786EED52B63829A9A4523B7D /* Pods-Classic Talent Tree-frameworks.sh */,
+				D57839488E30636D302143114B958CA9 /* Pods-Classic Talent Tree-Info.plist */,
+				EE530CEC972A3297C110A1C2289FC64D /* Pods-Classic Talent Tree-umbrella.h */,
+				94CD065442E3431655CBF4494D246C02 /* Pods-Classic Talent Tree.debug.xcconfig */,
+				1959D015D1E67FD55F6D6FF2E9E769E8 /* Pods-Classic Talent Tree.release.xcconfig */,
+			);
+			name = "Pods-Classic Talent Tree";
+			path = "Target Support Files/Pods-Classic Talent Tree";
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C850C37433B9EAF70AA8EF4EC21FC43 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E62464EE38987A7B6D078F34BE26118 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AC3B0F56D68EBFA6793AF60AE2B3145 /* Toast-Swift.modulemap */,
+				42C10D517DF5F172EFEDF686B53E0B90 /* Toast-Swift.xcconfig */,
+				BDEB7678731025900263F83909043BD0 /* Toast-Swift-dummy.m */,
+				75F40B7EC5C0D8A35630242FFD2D53B0 /* Toast-Swift-Info.plist */,
+				386D96672F07BFBCB07BAA642EB6EAAE /* Toast-Swift-prefix.pch */,
+				84D1A8CE4745D75961AA3732842B8AD2 /* Toast-Swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		3CEA0C76B4A930BF028F8BF7E913EABF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBB915D2DE6083AB2E5DC090389887B6 /* RHSideButtons */,
+				9BD68E74E72B1D2DD34B932C1D327B2C /* Toast-Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49149CB1D6BE65F02A638E89A62E9D23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				467BF0DD668B265933E4F4CABB6F7166 /* Pods_Classic_Talent_Tree.framework */,
+				9B3BDB5A52FC7ECA185FE76108129D64 /* RHSideButtons.framework */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CF31BCC2D13BDD596BCD3E758E0339B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8334CF6009BEDB09D5840CA1AE70D8E8 /* RHSideButtons.modulemap */,
+				9EF0A8C366621424140239CC97127927 /* RHSideButtons.xcconfig */,
+				5768BD0FF0EC12C2184EBB1F6058D0FE /* RHSideButtons-dummy.m */,
+				A9EE6BAEEB191B1645EC8C4282789B5A /* RHSideButtons-Info.plist */,
+				8E842847CFF7DD01749EF2248A7D1050 /* RHSideButtons-prefix.pch */,
+				8F35D045687A9E0E1FE568178E38EE1F /* RHSideButtons-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RHSideButtons";
+			sourceTree = "<group>";
+		};
+		6C850C37433B9EAF70AA8EF4EC21FC43 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EB0F1732A2D4DBA41714F9E205837D34 /* Foundation.framework */,
+				CB6193BDF9256B1B2DC71E7CF8BFFB3D /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		9BD68E74E72B1D2DD34B932C1D327B2C /* Toast-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E0FBDFE0954A5BCB41E3D30DA031D780 /* Toast.swift */,
+				2E62464EE38987A7B6D078F34BE26118 /* Support Files */,
+			);
+			name = "Toast-Swift";
+			path = "Toast-Swift";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				3CEA0C76B4A930BF028F8BF7E913EABF /* Pods */,
+				49149CB1D6BE65F02A638E89A62E9D23 /* Products */,
+				F36B146D2BE70FAFD2371D6BC84DB54B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DBB915D2DE6083AB2E5DC090389887B6 /* RHSideButtons */ = {
+			isa = PBXGroup;
+			children = (
+				A05992236E9907E02ADE796588E1FCB7 /* RHButtonView.swift */,
+				469E17E5C9A7658B86583954C8F7CE9C /* RHButtonViewConfigProtocol.swift */,
+				A565EA542436D61F2B384EE3FA9B3B0D /* RHSideButtonAnimator.swift */,
+				7203A228FE12230E733A423E46B5C63C /* RHSideButtonAnimatorProtocol.swift */,
+				6CE7FCEF63857AEFED375F2C3B125B3F /* RHSideButtons.swift */,
+				88F177D258FF0A17A9710DA88333379C /* RHTriggerButtonView.swift */,
+				4CF31BCC2D13BDD596BCD3E758E0339B /* Support Files */,
+			);
+			name = RHSideButtons;
+			path = RHSideButtons;
+			sourceTree = "<group>";
+		};
+		F36B146D2BE70FAFD2371D6BC84DB54B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0002B0A5A0A9967BCC429C94347C471D /* Pods-Classic Talent Tree */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3F4FA2B3AAA429CC0E1BD6A173628939 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F003DF08499D63225D6D62013BC8D12 /* RHSideButtons-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		541A0721D8D26374CF7CF04B1473A45A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C6A80D5389772869AF101C3905082D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16F4144AC4BB5E4C1BCC03080FE06B33 /* Pods-Classic Talent Tree-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8F7E0B635700AA682AB4E838D48ACFD5 /* RHSideButtons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA60430364765DD81DFD3BDD2C4F41A5 /* Build configuration list for PBXNativeTarget "RHSideButtons" */;
+			buildPhases = (
+				3F4FA2B3AAA429CC0E1BD6A173628939 /* Headers */,
+				B92432437E4DD1F73AA47D8635F4ECF3 /* Sources */,
+				B5812504F94B2F10D93B7BE3630C14F6 /* Frameworks */,
+				69B876C4840FC315FD6709A4D36D8EB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RHSideButtons;
+			productName = RHSideButtons;
+			productReference = 9B3BDB5A52FC7ECA185FE76108129D64 /* RHSideButtons.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8C401847A53B4C2810311A8CBD715AD /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
+			buildPhases = (
+				541A0721D8D26374CF7CF04B1473A45A /* Headers */,
+				32133C6B0EACD421CB9EB1ABFCE89B97 /* Sources */,
+				6102CF7EA55F5A7D669F88BF0D1A701F /* Frameworks */,
+				8812DCC289D1E7BE07818E350A3B8656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toast-Swift";
+			productName = "Toast-Swift";
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BBA6CDD910D6BB498AD1CEC4F2053DAF /* Pods-Classic Talent Tree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCAED6E7B71C8A3D297BE1F024BE46C /* Build configuration list for PBXNativeTarget "Pods-Classic Talent Tree" */;
+			buildPhases = (
+				84C6A80D5389772869AF101C3905082D /* Headers */,
+				C8B27FE35326E628AC439F07F2713FB5 /* Sources */,
+				2A8DA7599E82AF651EA374D7C6101BA7 /* Frameworks */,
+				3E9445FFC610296B2BAD3F9A4293EFBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				934E4841E523CE3FEC596A9E2B66B6F9 /* PBXTargetDependency */,
+				5E2EA7C6DA9256CA3486DEFE90B1A9F2 /* PBXTargetDependency */,
+			);
+			name = "Pods-Classic Talent Tree";
+			productName = "Pods-Classic Talent Tree";
+			productReference = 467BF0DD668B265933E4F4CABB6F7166 /* Pods_Classic_Talent_Tree.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 49149CB1D6BE65F02A638E89A62E9D23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBA6CDD910D6BB498AD1CEC4F2053DAF /* Pods-Classic Talent Tree */,
+				8F7E0B635700AA682AB4E838D48ACFD5 /* RHSideButtons */,
+				B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E9445FFC610296B2BAD3F9A4293EFBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B876C4840FC315FD6709A4D36D8EB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8812DCC289D1E7BE07818E350A3B8656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32133C6B0EACD421CB9EB1ABFCE89B97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */,
+				4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B92432437E4DD1F73AA47D8635F4ECF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47A7E9AE9DC85C3DB4C34B5634544AD /* RHButtonView.swift in Sources */,
+				F96C5D83171E139424E562D22DC0E233 /* RHButtonViewConfigProtocol.swift in Sources */,
+				4A1F2C6CF50AE906BFB40C8A3ED77C3C /* RHSideButtonAnimator.swift in Sources */,
+				89A0C0FE86CF8A7B6D2D04A43F4DBB61 /* RHSideButtonAnimatorProtocol.swift in Sources */,
+				88951F4EC5DBAC6000AFEACED0C1D43E /* RHSideButtons-dummy.m in Sources */,
+				5CAEC0275F0272085A283843E1B57D42 /* RHSideButtons.swift in Sources */,
+				D0E760F2DD740BA73969995251C5E64E /* RHTriggerButtonView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8B27FE35326E628AC439F07F2713FB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A292E554676685B5EEDDD0E46282EFA0 /* Pods-Classic Talent Tree-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E2EA7C6DA9256CA3486DEFE90B1A9F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift";
+			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
+			targetProxy = 0EA2E3C30DEEFB4676B34E46F4A19EA2 /* PBXContainerItemProxy */;
+		};
+		934E4841E523CE3FEC596A9E2B66B6F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RHSideButtons;
+			target = 8F7E0B635700AA682AB4E838D48ACFD5 /* RHSideButtons */;
+			targetProxy = 8CFEC8DF1D608DDA264C8548ABBC7FA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A5678C191A7269670AE9D0758D792C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94CD065442E3431655CBF4494D246C02 /* Pods-Classic Talent Tree.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4E61624EFA04C8C998DB5184F96BDC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1959D015D1E67FD55F6D6FF2E9E769E8 /* Pods-Classic Talent Tree.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Classic Talent Tree/Pods-Classic Talent Tree.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7939A82CCABDB2129B1B13224D1E4C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF0A8C366621424140239CC97127927 /* RHSideButtons.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RHSideButtons/RHSideButtons-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RHSideButtons/RHSideButtons-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RHSideButtons/RHSideButtons.modulemap";
+				PRODUCT_MODULE_NAME = RHSideButtons;
+				PRODUCT_NAME = RHSideButtons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		98898C6F52A6A7DBE554A243A24C2F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42C10D517DF5F172EFEDF686B53E0B90 /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCF395896D86CD8F407AFE14F4D91FE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF0A8C366621424140239CC97127927 /* RHSideButtons.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RHSideButtons/RHSideButtons-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RHSideButtons/RHSideButtons-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RHSideButtons/RHSideButtons.modulemap";
+				PRODUCT_MODULE_NAME = RHSideButtons;
+				PRODUCT_NAME = RHSideButtons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F3D7AA7B6797C4885E6D6232E7580830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42C10D517DF5F172EFEDF686B53E0B90 /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8C401847A53B4C2810311A8CBD715AD /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98898C6F52A6A7DBE554A243A24C2F51 /* Debug */,
+				F3D7AA7B6797C4885E6D6232E7580830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA60430364765DD81DFD3BDD2C4F41A5 /* Build configuration list for PBXNativeTarget "RHSideButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7939A82CCABDB2129B1B13224D1E4C90 /* Debug */,
+				CCF395896D86CD8F407AFE14F4D91FE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCAED6E7B71C8A3D297BE1F024BE46C /* Build configuration list for PBXNativeTarget "Pods-Classic Talent Tree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A5678C191A7269670AE9D0758D792C3 /* Debug */,
+				4E61624EFA04C8C998DB5184F96BDC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

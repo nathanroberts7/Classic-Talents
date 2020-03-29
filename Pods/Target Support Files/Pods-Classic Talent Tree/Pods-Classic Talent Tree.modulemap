@@ -1,0 +1,6 @@
+framework module Pods_Classic_Talent_Tree {
+  umbrella header "Pods-Classic Talent Tree-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -13,15 +13,19 @@ import RHSideButtons
 class TabViewController: UITabBarController {
     
     private enum Constants {
-        static let sideMenuButtonMargin: CGFloat = 10
-        static let sideMenuButtonSizeRatio: CGFloat = 16
+        static let menuButtonMargin: CGFloat = 10
+        static let menuButtonSizeRatio: CGFloat = 16
         static let talentInfoHeight: CGFloat = 35
-        static let menuIcon: String = "menu-icon"
+        static let classMenuIcon: String = "menu-icon"
+        static let settingsMenuIcon: String = "settings-icon"
         static let maxPoints: Int = 51
     }
     
-    private var sideMenuView: RHSideButtons?
-    private var sideMenuDataSource: SideMenuDataSource = SideMenuDataSource()
+    private var classMenuView: RHSideButtons?
+    private var classMenu: ClassMenu = ClassMenu()
+    
+    private var settingsMenuView: RHSideButtons?
+    private var settingsMenu: SettingsMenu = SettingsMenu()
     
     var pointsRemaining: Int = Constants.maxPoints
     
@@ -59,24 +63,44 @@ class TabViewController: UITabBarController {
     
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
-        configureMenu()
+        configureClassMenu()
+        configureSettingsMenu()
     }
     
-    private func configureMenu() {
-        let triggerButton = RHTriggerButtonView(pressedImage: UIImage(imageLiteralResourceName: Constants.menuIcon)) {
-            $0.image = UIImage(named: Constants.menuIcon)
+    private func configureClassMenu() {
+        let triggerButton = RHTriggerButtonView(pressedImage: UIImage(imageLiteralResourceName: Constants.classMenuIcon)) {
+            $0.image = UIImage(named: Constants.classMenuIcon)
             $0.hasShadow = false
         }
     
-        sideMenuView?.reloadButtons()
-        sideMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
-        sideMenuView?.delegate = self
-        sideMenuView?.dataSource = sideMenuDataSource
+        classMenuView?.reloadButtons()
+        classMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
+        classMenuView?.delegate = self
+        classMenuView?.dataSource = classMenu
+        classMenuView?.menuType = 1
 
         let safeAreaHeight = (UIScreen.main.bounds.height - view.safeAreaLayoutGuide.layoutFrame.size.height)/2
-        let buttonPosition = CGPoint(x: UIScreen.main.bounds.width - UIScreen.main.bounds.height/Constants.sideMenuButtonSizeRatio - Constants.sideMenuButtonMargin,
-                                     y: tabBar.frame.minY - safeAreaHeight - Constants.talentInfoHeight - UIScreen.main.bounds.height/Constants.sideMenuButtonSizeRatio)
-        sideMenuView?.setTriggerButtonPosition(buttonPosition)
+        let buttonPosition = CGPoint(x: UIScreen.main.bounds.width - UIScreen.main.bounds.height/Constants.menuButtonSizeRatio - Constants.menuButtonMargin,
+                                     y: tabBar.frame.minY - safeAreaHeight - Constants.talentInfoHeight - UIScreen.main.bounds.height/Constants.menuButtonSizeRatio)
+        classMenuView?.setTriggerButtonPosition(buttonPosition)
+    }
+    
+    private func configureSettingsMenu() {
+        let triggerButton = RHTriggerButtonView(pressedImage: UIImage(imageLiteralResourceName: Constants.settingsMenuIcon)) {
+                $0.image = UIImage(named: Constants.settingsMenuIcon)
+                $0.hasShadow = false
+            }
+        
+        settingsMenuView?.reloadButtons()
+        settingsMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
+        settingsMenuView?.delegate = self
+        settingsMenuView?.dataSource = settingsMenu
+        settingsMenuView?.menuType = 0
+
+        let safeAreaHeight = (UIScreen.main.bounds.height - view.safeAreaLayoutGuide.layoutFrame.size.height)/2
+        let buttonPosition = CGPoint(x: Constants.menuButtonMargin,
+                                     y: tabBar.frame.minY - safeAreaHeight - Constants.talentInfoHeight - UIScreen.main.bounds.height/Constants.menuButtonSizeRatio)
+        settingsMenuView?.setTriggerButtonPosition(buttonPosition)
     }
     
     private func reset() {
@@ -87,11 +111,27 @@ class TabViewController: UITabBarController {
 
 extension TabViewController: RHSideButtonsDelegate {
     
-    func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
-        guard let className = sideMenuDataSource.classChoices[index].className else { return }
+    func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int, menuType: Int?) {
+        guard let menuType = menuType else { return }
+        switch menuType {
+        case 0:
+            accessSettings(index: index)
+        case 1:
+            changeClass(index: index)
+        default:
+            return
+        }
+    }
+    
+    private func changeClass(index: Int) {
+        guard let className = classMenu.classChoices[index].className else { return }
         guard let talentData = TalentData.data else { return }
         reset()
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == className })
+    }
+    
+    private func accessSettings(index: Int) {
+        
     }
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {

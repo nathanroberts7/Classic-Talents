@@ -23,7 +23,8 @@
 		81A1BA5A242AAC9500E0840B /* ToolTip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A1BA59242AAC9500E0840B /* ToolTip.xib */; };
 		81A1BA5C242AF41800E0840B /* Classic+UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BA5B242AF41800E0840B /* Classic+UIStackView.swift */; };
 		81A73AA5242EFEE50096841F /* Classic+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A73AA4242EFEE50096841F /* Classic+UIColor.swift */; };
-		81A73AA9242FBC4D0096841F /* SideMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A73AA8242FBC4D0096841F /* SideMenuDataSource.swift */; };
+		81A73AA9242FBC4D0096841F /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A73AA8242FBC4D0096841F /* ClassMenu.swift */; };
+		81A73AAB243022EB0096841F /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A73AAA243022EB0096841F /* SettingsMenu.swift */; };
 		81AA405E241C6B7800F95846 /* Classic+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA405D241C6B7800F95846 /* Classic+UIImage.swift */; };
 		81CEE6B92429D4CA00E9E76F /* ToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CEE6B82429D4CA00E9E76F /* ToolTip.swift */; };
 		81F9A9942406425F009D8E3E /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A9932406425F009D8E3E /* Talents.swift */; };
@@ -51,7 +52,8 @@
 		81A1BA59242AAC9500E0840B /* ToolTip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolTip.xib; sourceTree = "<group>"; };
 		81A1BA5B242AF41800E0840B /* Classic+UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIStackView.swift"; sourceTree = "<group>"; };
 		81A73AA4242EFEE50096841F /* Classic+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIColor.swift"; sourceTree = "<group>"; };
-		81A73AA8242FBC4D0096841F /* SideMenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDataSource.swift; sourceTree = "<group>"; };
+		81A73AA8242FBC4D0096841F /* ClassMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenu.swift; sourceTree = "<group>"; };
+		81A73AAA243022EB0096841F /* SettingsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		81AA405D241C6B7800F95846 /* Classic+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIImage.swift"; sourceTree = "<group>"; };
 		81CEE6B82429D4CA00E9E76F /* ToolTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTip.swift; sourceTree = "<group>"; };
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
@@ -160,7 +162,8 @@
 				814C44EA2408DB0C0062CA53 /* TabViewController.swift */,
 				814C8F8A24046B8500BD4D7E /* TalentDataSource.swift */,
 				814C8F8C24046B8500BD4D7E /* TalentViewController.swift */,
-				81A73AA8242FBC4D0096841F /* SideMenuDataSource.swift */,
+				81A73AA8242FBC4D0096841F /* ClassMenu.swift */,
+				81A73AAA243022EB0096841F /* SettingsMenu.swift */,
 				818B16FC2407A184002AE55F /* Configuration */,
 				818B16F824073FCB002AE55F /* Data */,
 				81AA405C241C6B6700F95846 /* Extensions */,
@@ -329,10 +332,11 @@
 			files = (
 				819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */,
 				814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */,
-				81A73AA9242FBC4D0096841F /* SideMenuDataSource.swift in Sources */,
+				81A73AA9242FBC4D0096841F /* ClassMenu.swift in Sources */,
 				81CEE6B92429D4CA00E9E76F /* ToolTip.swift in Sources */,
 				819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */,
 				81F9A999240649E0009D8E3E /* FetchData.swift in Sources */,
+				81A73AAB243022EB0096841F /* SettingsMenu.swift in Sources */,
 				814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */,
 				818B16FB2407401E002AE55F /* TalentData.swift in Sources */,
 				81AA405E241C6B7800F95846 /* Classic+UIImage.swift in Sources */,
