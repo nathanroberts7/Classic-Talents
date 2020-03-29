@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class TalentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -92,9 +93,21 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let row = skill.position[0] - 1
         
+        
         // If all possible points were used, reset the cell the user taps next.
-        guard let tabView = tabViewReference, tabView.pointsRemaining > 0,
-            skill.currentRank < skill.maxRank else { resetCell(cell: cell, withSkill: skill, atRow: row); toggleToolTip(cell: cell, specName: specName); return }
+        guard let tabView = tabViewReference, skill.currentRank < skill.maxRank else {
+            resetCell(cell: cell, withSkill: skill, atRow: row)
+            toggleToolTip(cell: cell, specName: specName)
+            return
+        }
+        
+        guard tabView.pointsRemaining > 0 else {
+            self.view.makeToast("No points remaining.", duration: 1.5, position: .center)
+            resetCell(cell: cell, withSkill: skill, atRow: row)
+            toggleToolTip(cell: cell, specName: specName)
+            return
+            
+        }
         
         // Tap to increase the rank. If already max, then reset.
         increaseCellRank(cell: cell, atRow: row)

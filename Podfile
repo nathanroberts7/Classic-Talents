@@ -7,5 +7,6 @@ target 'Classic Talent Tree' do
 
   # Pods for Classic Talent Tree
   pod 'RHSideButtons'
+  pod 'Toast-Swift', '~> 5.0.1'
 
 end
