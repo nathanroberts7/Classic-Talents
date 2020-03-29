@@ -32,6 +32,7 @@
 		81ED1A94243069ED00FE7F2E /* Classic+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A93243069ED00FE7F2E /* Classic+UIViewController.swift */; };
 		81ED1A9624306E0000FE7F2E /* BuildManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9524306E0000FE7F2E /* BuildManager.swift */; };
 		81ED1A9824306FE800FE7F2E /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9724306FE800FE7F2E /* Build.swift */; };
+		81ED1A9A243075F200FE7F2E /* Builds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81ED1A99243075F200FE7F2E /* Builds.storyboard */; };
 		81F9A9942406425F009D8E3E /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A9932406425F009D8E3E /* Talents.swift */; };
 		81F9A99624064306009D8E3E /* talent-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F9A99524064306009D8E3E /* talent-data.json */; };
 		81F9A999240649E0009D8E3E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A998240649E0009D8E3E /* FetchData.swift */; };
@@ -66,6 +67,7 @@
 		81ED1A93243069ED00FE7F2E /* Classic+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIViewController.swift"; sourceTree = "<group>"; };
 		81ED1A9524306E0000FE7F2E /* BuildManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildManager.swift; sourceTree = "<group>"; };
 		81ED1A9724306FE800FE7F2E /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
+		81ED1A99243075F200FE7F2E /* Builds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Builds.storyboard; sourceTree = "<group>"; };
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		81F9A99524064306009D8E3E /* talent-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "talent-data.json"; sourceTree = "<group>"; };
 		81F9A998240649E0009D8E3E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
 				814C44E82408DAE60062CA53 /* TabBar.storyboard */,
 				81A73AAC24302ED00096841F /* Info.storyboard */,
+				81ED1A99243075F200FE7F2E /* Builds.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */,
 				814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */,
 				81F9A99624064306009D8E3E /* talent-data.json in Resources */,
+				81ED1A9A243075F200FE7F2E /* Builds.storyboard in Resources */,
 				81A1BA5A242AAC9500E0840B /* ToolTip.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

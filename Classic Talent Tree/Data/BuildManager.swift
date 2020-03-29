@@ -22,5 +22,4 @@ class BuildManager {
     private func isKeyPresent(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }
-    
 }
