@@ -9,7 +9,7 @@
 import Foundation
 import RHSideButtons
 
-class SettingsMenu: RHSideButtonsDataSource {
+class SettingsMenuDataSource: RHSideButtonsDataSource {
     
     private enum Constants {
         static let saveIcon = "save-icon"

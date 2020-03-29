@@ -22,10 +22,10 @@ class TabViewController: UITabBarController {
     }
     
     private var classMenuView: RHSideButtons?
-    private var classMenu: ClassMenu = ClassMenu()
+    private var classMenuDataSource: ClassMenuDataSource = ClassMenuDataSource()
     
     private var settingsMenuView: RHSideButtons?
-    private var settingsMenu: SettingsMenu = SettingsMenu()
+    private var settingsMenuDataSource: SettingsMenuDataSource = SettingsMenuDataSource()
     
     var pointsRemaining: Int = Constants.maxPoints
     
@@ -76,7 +76,7 @@ class TabViewController: UITabBarController {
         classMenuView?.reloadButtons()
         classMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
         classMenuView?.delegate = self
-        classMenuView?.dataSource = classMenu
+        classMenuView?.dataSource = classMenuDataSource
         classMenuView?.menuType = 1
 
         let safeAreaHeight = (UIScreen.main.bounds.height - view.safeAreaLayoutGuide.layoutFrame.size.height)/2
@@ -94,7 +94,7 @@ class TabViewController: UITabBarController {
         settingsMenuView?.reloadButtons()
         settingsMenuView = RHSideButtons(parentView: self.view, triggerButton: triggerButton)
         settingsMenuView?.delegate = self
-        settingsMenuView?.dataSource = settingsMenu
+        settingsMenuView?.dataSource = settingsMenuDataSource
         settingsMenuView?.menuType = 0
 
         let safeAreaHeight = (UIScreen.main.bounds.height - view.safeAreaLayoutGuide.layoutFrame.size.height)/2
@@ -124,14 +124,28 @@ extension TabViewController: RHSideButtonsDelegate {
     }
     
     private func changeClass(index: Int) {
-        guard let className = classMenu.classChoices[index].className else { return }
+        guard let className = classMenuDataSource.classChoices[index].className else { return }
         guard let talentData = TalentData.data else { return }
         reset()
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == className })
     }
     
     private func accessSettings(index: Int) {
-        
+        switch index {
+        case 0:
+            // Save
+            break
+        case 1:
+            // Access Save Folder
+            break
+        case 2:
+            // Info
+            let storyboard = UIStoryboard(name: "Info", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
+            self.present(controller, animated: true, completion: nil)
+        default:
+            return
+        }
     }
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
