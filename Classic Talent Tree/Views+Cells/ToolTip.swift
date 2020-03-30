@@ -80,6 +80,7 @@ class ToolTip: UIView {
             return
         }
         
+        nextRankStackView.isHidden = true // Remove this later. Temporarily disabling Next Rank functionality.
         currentRankDescription.text = skill.rankDescription[skill.currentRank - 1]
         nextRankDescription.text = skill.rankDescription[skill.currentRank]
     }
