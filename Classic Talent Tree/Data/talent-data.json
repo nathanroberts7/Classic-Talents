@@ -1604,7 +1604,7 @@
 							"maxRank": 1,
 							"currentRank": 0,
 							"rankDescription": [
-								"Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.<br><br>Unleashing this Seal's energy will judge an enemy, instantly causing 46.5 to 55.5 Holy damage, 93 to 102 if the target is stunned or incapacitated."
+								"Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 46.5 to 55.5 Holy damage, 93 to 102 if the target is stunned or incapacitated."
 							],
 							"position" : [3,3],
 							"enabled": false, 
@@ -6530,7 +6530,7 @@
 							"currentRank": 0,
 							"position" : [5,2],
 							"rankDescription": [
-								"When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. The effect is canceled if any Demon is summoned.<br><br>Imp: Increases your Fire damage by 15%.<br><br>Voidwalker: Restores 3% of total Health every 4 sec.<br><br>Succubus: Increases your Shadow damage by 15%.<br><br>Felhunter: Restores 2% of total Mana every 4 sec."
+								"When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. The effect is canceled if any Demon is summoned. Imp: Increases your Fire damage by 15%. Voidwalker: Restores 3% of total Health every 4 sec. Succubus: Increases your Shadow damage by 15%. Felhunter: Restores 2% of total Mana every 4 sec."
 							],
 							"enabled": false, 
  							"faded": false,
@@ -6561,11 +6561,11 @@
 							"currentRank": 0,
 							"position" : [6,3],
 							"rankDescription": [
-								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 4%.<br><br>Voidwalker - Reduces physical damage taken by 2%.<br><br>Succubus - Increases all damage caused by 2%.<br><br>Felhunter - Increases all resistances by .2 per level.",
-								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 8%.<br><br>Voidwalker - Reduces physical damage taken by 4%.<br><br>Succubus - Increases all damage caused by 4%.<br><br>Felhunter - Increases all resistances by .4 per level.",
-								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 12%.<br><br>Voidwalker - Reduces physical damage taken by 6%.<br><br>Succubus - Increases all damage caused by 6%.<br><br>Felhunter - Increases all resistances by .6 per level.",
-								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 16%.<br><br>Voidwalker - Reduces physical damage taken by 8%.<br><br>Succubus - Increases all damage caused by 8%.<br><br>Felhunter - Increases all resistances by .8 per level.",
-								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 20%.<br><br>Voidwalker - Reduces physical damage taken by 10%.<br><br>Succubus - Increases all damage caused by 10%.<br><br>Felhunter - Increases all resistances by 1 per level."
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by 4%. Voidwalker - Reduces physical damage taken by 2%. Succubus - Increases all damage caused by 2%. Felhunter - Increases all resistances by .2 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by 8%. Voidwalker - Reduces physical damage taken by 4%. Succubus - Increases all damage caused by 4%. Felhunter - Increases all resistances by .4 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by 12%. Voidwalker - Reduces physical damage taken by 6%. Succubus - Increases all damage caused by 6%. Felhunter - Increases all resistances by .6 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by 16%. Voidwalker - Reduces physical damage taken by 8%. Succubus - Increases all damage caused by 8%. Felhunter - Increases all resistances by .8 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by 20%. Voidwalker - Reduces physical damage taken by 10%. Succubus - Increases all damage caused by 10%. Felhunter - Increases all resistances by 1 per level."
 							],
 							"enabled": false, 
  							"faded": false,
@@ -7194,7 +7194,7 @@
 							"currentRank": 0,
 							"position" : [7,2],
 							"rankDescription": [
-								"Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+								"Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
 							],
 							"enabled": false, 
  							"faded": false,
