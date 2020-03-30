@@ -24,6 +24,10 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     private var backgroundImage: UIImage!
     private var toolTip: ToolTip?
     
+    // Load Spec:
+    var loadSpec = false
+    var loadSpecPoints: [Int] = []
+    
     private var talentDataSource: TalentDataSource = TalentDataSource()
     
     private enum Constants {
@@ -55,6 +59,10 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         updateRequiredLevelLabel()
         updateRemainingPointsLabel()
         updateCellAvailability(forRow: 0)
+        
+        // Load Spec
+        guard loadSpec else { return }
+        loadSpec(points: loadSpecPoints)
     }
     
     func configure(skills: [SkillElement], grid: [Int], image: UIImage, name: String, reference: TabViewController) {
@@ -172,6 +180,15 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         tabViewReference?.pointsRemaining -= 1
     }
     
+    private func setCellRank(cell: TalentCell, rank: Int, atRow row: Int) {
+        cell.skill?.currentRank = rank
+        rowPointCount[row] += rank
+        pointCount += rank
+        tabViewReference?.pointsRemaining -= rank
+        cell.updateText()
+        updateCellAvailability(forRow: row)
+    }
+    
     private func updateRemainingPointsLabel() {
         guard let points = tabViewReference?.pointsRemaining else { return }
         remainingPointsLabel.text = "Remaining Points: \(points)"
@@ -218,6 +235,22 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         updateRequiredLevelLabel()
         updateRemainingPointsLabel()
         if toolTip != nil { toolTip?.removeFromSuperview() }
+    }
+    
+    func loadSpec(points: [Int]) {
+        guard let collectionView = collectionView else { return }
+        var points: [Int] = points
+        for index in 0...Constants.maxCellIndex {
+            guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? TalentCell,
+                let _ = cell.skill?.currentRank else { continue }
+            let row = index/Int(Constants.itemsPerRow)
+            setCellRank(cell: cell, rank: points.removeFirst(), atRow: row)
+            cell.updateColor()
+        }
+        updateRequiredLevelLabel()
+        updateRemainingPointsLabel()
+        if toolTip != nil { toolTip?.removeFromSuperview() }
+        loadSpec = false
     }
 }
 

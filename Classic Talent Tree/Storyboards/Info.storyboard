@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="H86-UR-j4Q">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="583"/>
+                                        <rect key="frame" x="0.0" y="15" width="414" height="896.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUZ-w2-poA" userLabel="Intro">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
@@ -43,7 +43,7 @@
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYa-sE-aFW">
                                                                 <rect key="frame" x="0.0" y="50.5" width="374" height="100"/>
-                                                                <string key="text">Thank you for using my app! Feel free to contact me about any problems or suggestions. Also, please take some time to check out the creator of this app's icon, 00setes (more information below).</string>
+                                                                <string key="text">Thank you for using my app! Feel free to contact me about any problems or suggestions. Also, please take some time to check out the creator of this app's icon (more information below).</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -59,8 +59,61 @@
                                                     <constraint firstAttribute="trailing" secondItem="i0t-HD-jmI" secondAttribute="trailing" constant="20" symbolic="YES" id="tJj-9g-SYT"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aV-tO-8DA" userLabel="Instructions">
+                                                <rect key="frame" x="0.0" y="175.5" width="414" height="288.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kpy-HM-Dba">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="288.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o00-CO-9ap">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tap an available talent to increase its rank." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-4s-DVH">
+                                                                <rect key="frame" x="0.0" y="40.5" width="374" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tap any talent to see the tool tip. Pan an available talent to see the tool tip without increasing the rank." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViQ-FF-yP9">
+                                                                <rect key="frame" x="0.0" y="72.5" width="374" height="60"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Press reset to reset the current specialization's allocated points." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlL-Gr-nGF">
+                                                                <rect key="frame" x="0.0" y="144.5" width="374" height="40"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The menu located at the bottom right lets you select a class." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-YW-ohO">
+                                                                <rect key="frame" x="0.0" y="196.5" width="374" height="40"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The menu located at the bottom left lets you save, load, and delete builds!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5D-dw-e8m">
+                                                                <rect key="frame" x="0.0" y="248.5" width="374" height="40"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="kpy-HM-Dba" secondAttribute="bottom" id="0zY-cv-rv1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kpy-HM-Dba" secondAttribute="trailing" constant="20" symbolic="YES" id="IaU-gh-S3z"/>
+                                                    <constraint firstItem="kpy-HM-Dba" firstAttribute="top" secondItem="1aV-tO-8DA" secondAttribute="top" id="cbv-4O-ZOK"/>
+                                                    <constraint firstItem="kpy-HM-Dba" firstAttribute="leading" secondItem="1aV-tO-8DA" secondAttribute="leading" constant="20" symbolic="YES" id="zjR-SI-scC"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txd-NS-OmN" userLabel="Contact Info">
-                                                <rect key="frame" x="0.0" y="175.5" width="414" height="116.5"/>
+                                                <rect key="frame" x="0.0" y="489" width="414" height="116.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2t0-MX-YYR">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="116.5"/>
@@ -105,7 +158,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NL-I9-bcE" userLabel="Icon Artist">
-                                                <rect key="frame" x="0.0" y="317" width="414" height="116.5"/>
+                                                <rect key="frame" x="0.0" y="630.5" width="414" height="116.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gqx-rz-vDP">
                                                         <rect key="frame" x="20" y="0.0" width="394" height="116.5"/>
@@ -126,14 +179,20 @@
                                                                         <state key="normal" title="Reddit Profile URL">
                                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="copyRedditURL:" destination="bMV-xb-xiP" eventType="touchUpInside" id="hp2-P4-sEY"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-ik-l1c">
                                                                         <rect key="frame" x="0.0" y="84.5" width="197" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <state key="normal" title="Artist Website URL">
+                                                                        <state key="normal" title="DeviantArt URL">
                                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="copyDeviantArtURL:" destination="bMV-xb-xiP" eventType="touchUpInside" id="ckG-5C-Me1"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -153,7 +212,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="no8-bR-dpu" userLabel="Other Icon Use">
-                                                <rect key="frame" x="0.0" y="458.5" width="414" height="124.5"/>
+                                                <rect key="frame" x="0.0" y="772" width="414" height="124.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Hza-RP-6xq">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="124.5"/>

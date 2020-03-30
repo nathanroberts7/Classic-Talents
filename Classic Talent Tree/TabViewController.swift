@@ -109,6 +109,15 @@ class TabViewController: UITabBarController {
         self.viewControllers = nil
         pointsRemaining = Constants.maxPoints
     }
+    
+    private func loadBuild(specPoints: [[Int]]) {
+        guard specPoints.count == 3, let viewControllers = viewControllers else { return }
+        for (index, viewController) in viewControllers.enumerated() {
+            guard let viewController = viewController as? TalentViewController else { continue }
+            viewController.loadSpec = true
+            viewController.loadSpecPoints = specPoints[index]
+        }
+    }
 }
 
 extension TabViewController: RHSideButtonsDelegate {
@@ -139,7 +148,10 @@ extension TabViewController: RHSideButtonsDelegate {
             saveBuild()
         case 1:
             // Access Save Folder
-            break
+            let storyboard = UIStoryboard(name: "SavedBuilds", bundle: nil)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "SavedBuildsViewController") as? SavedBuildsViewController else { return }
+            controller.configure(delegate: self)
+            self.present(controller, animated: true, completion: nil)
         case 2:
             // Info
             let storyboard = UIStoryboard(name: "Info", bundle: nil)
@@ -187,5 +199,15 @@ extension TabViewController: RHSideButtonsDelegate {
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
         // Do nothing.
+    }
+}
+
+extension TabViewController: SavedBuildsViewControllerDelegate {
+    
+    func savedBuildsViewController(_: SavedBuildsViewController, loadBuild build: Build) {
+        guard let talentData = TalentData.data else { return }
+        reset()
+        currentClass = talentData.classes.first(where: { $0.name.lowercased() == build.buildClass.name.lowercased() })
+        loadBuild(specPoints: build.specPoints)
     }
 }

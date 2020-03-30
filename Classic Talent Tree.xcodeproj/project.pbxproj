@@ -32,7 +32,10 @@
 		81ED1A94243069ED00FE7F2E /* Classic+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A93243069ED00FE7F2E /* Classic+UIViewController.swift */; };
 		81ED1A9624306E0000FE7F2E /* BuildManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9524306E0000FE7F2E /* BuildManager.swift */; };
 		81ED1A9824306FE800FE7F2E /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9724306FE800FE7F2E /* Build.swift */; };
-		81ED1A9A243075F200FE7F2E /* Builds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81ED1A99243075F200FE7F2E /* Builds.storyboard */; };
+		81ED1A9A243075F200FE7F2E /* SavedBuilds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81ED1A99243075F200FE7F2E /* SavedBuilds.storyboard */; };
+		81ED1A9C2431902200FE7F2E /* SavedBuild.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81ED1A9B2431902200FE7F2E /* SavedBuild.xib */; };
+		81ED1A9E2431946100FE7F2E /* SavedBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9D2431946100FE7F2E /* SavedBuild.swift */; };
+		81ED1AA0243198CC00FE7F2E /* SavedBuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED1A9F243198CC00FE7F2E /* SavedBuildsViewController.swift */; };
 		81F9A9942406425F009D8E3E /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A9932406425F009D8E3E /* Talents.swift */; };
 		81F9A99624064306009D8E3E /* talent-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F9A99524064306009D8E3E /* talent-data.json */; };
 		81F9A999240649E0009D8E3E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9A998240649E0009D8E3E /* FetchData.swift */; };
@@ -67,7 +70,10 @@
 		81ED1A93243069ED00FE7F2E /* Classic+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classic+UIViewController.swift"; sourceTree = "<group>"; };
 		81ED1A9524306E0000FE7F2E /* BuildManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildManager.swift; sourceTree = "<group>"; };
 		81ED1A9724306FE800FE7F2E /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
-		81ED1A99243075F200FE7F2E /* Builds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Builds.storyboard; sourceTree = "<group>"; };
+		81ED1A99243075F200FE7F2E /* SavedBuilds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedBuilds.storyboard; sourceTree = "<group>"; };
+		81ED1A9B2431902200FE7F2E /* SavedBuild.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedBuild.xib; sourceTree = "<group>"; };
+		81ED1A9D2431946100FE7F2E /* SavedBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBuild.swift; sourceTree = "<group>"; };
+		81ED1A9F243198CC00FE7F2E /* SavedBuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBuildsViewController.swift; sourceTree = "<group>"; };
 		81F9A9932406425F009D8E3E /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		81F9A99524064306009D8E3E /* talent-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "talent-data.json"; sourceTree = "<group>"; };
 		81F9A998240649E0009D8E3E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				81A1BA59242AAC9500E0840B /* ToolTip.xib */,
+				81ED1A9B2431902200FE7F2E /* SavedBuild.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -138,7 +145,7 @@
 				819F9B6E2403C19C00518FFB /* LaunchScreen.storyboard */,
 				814C44E82408DAE60062CA53 /* TabBar.storyboard */,
 				81A73AAC24302ED00096841F /* Info.storyboard */,
-				81ED1A99243075F200FE7F2E /* Builds.storyboard */,
+				81ED1A99243075F200FE7F2E /* SavedBuilds.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				81A73AA8242FBC4D0096841F /* ClassMenuDataSource.swift */,
 				81A73AAA243022EB0096841F /* SettingsMenuDataSource.swift */,
 				81ED1A912430381400FE7F2E /* InfoViewController.swift */,
+				81ED1A9F243198CC00FE7F2E /* SavedBuildsViewController.swift */,
 				818B16FC2407A184002AE55F /* Configuration */,
 				818B16F824073FCB002AE55F /* Data */,
 				81AA405C241C6B6700F95846 /* Extensions */,
@@ -197,6 +205,7 @@
 			children = (
 				814C8F8B24046B8500BD4D7E /* TalentCell.swift */,
 				81CEE6B82429D4CA00E9E76F /* ToolTip.swift */,
+				81ED1A9D2431946100FE7F2E /* SavedBuild.swift */,
 			);
 			path = "Views+Cells";
 			sourceTree = "<group>";
@@ -293,10 +302,11 @@
 				81198F6B242A6C33005DB2FE /* Roboto in Resources */,
 				81A73AAD24302ED00096841F /* Info.storyboard in Resources */,
 				819F9B702403C19C00518FFB /* LaunchScreen.storyboard in Resources */,
+				81ED1A9C2431902200FE7F2E /* SavedBuild.xib in Resources */,
 				819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */,
 				814C8F8724046AC700BD4D7E /* Talent.storyboard in Resources */,
 				81F9A99624064306009D8E3E /* talent-data.json in Resources */,
-				81ED1A9A243075F200FE7F2E /* Builds.storyboard in Resources */,
+				81ED1A9A243075F200FE7F2E /* SavedBuilds.storyboard in Resources */,
 				81A1BA5A242AAC9500E0840B /* ToolTip.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,12 +368,14 @@
 				81F9A999240649E0009D8E3E /* FetchData.swift in Sources */,
 				81A73AAB243022EB0096841F /* SettingsMenuDataSource.swift in Sources */,
 				81ED1A94243069ED00FE7F2E /* Classic+UIViewController.swift in Sources */,
+				81ED1AA0243198CC00FE7F2E /* SavedBuildsViewController.swift in Sources */,
 				814C8F8D24046B8500BD4D7E /* TalentDataSource.swift in Sources */,
 				818B16FB2407401E002AE55F /* TalentData.swift in Sources */,
 				81AA405E241C6B7800F95846 /* Classic+UIImage.swift in Sources */,
 				81A1BA5C242AF41800E0840B /* Classic+UIStackView.swift in Sources */,
 				81F9A9942406425F009D8E3E /* Talents.swift in Sources */,
 				814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */,
+				81ED1A9E2431946100FE7F2E /* SavedBuild.swift in Sources */,
 				81ED1A9824306FE800FE7F2E /* Build.swift in Sources */,
 				814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */,
 				81ED1A922430381400FE7F2E /* InfoViewController.swift in Sources */,

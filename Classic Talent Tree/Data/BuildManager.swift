@@ -19,6 +19,22 @@ class BuildManager {
         }
     }
     
+    func deleteBuild(build: Build) {
+        UserDefaults.standard.removeObject(forKey: "build-\(build.name)")
+    }
+    
+    func retrieveAllSavedBuilds() -> [Build] {
+        var builds: [Build] = []
+        let decoder = JSONDecoder()
+        for (_, encodedBuild) in UserDefaults.standard.dictionaryRepresentation() {
+            guard let encodedBuild = encodedBuild as? Data else { continue }
+            if let decodedBuild = try? decoder.decode(Build.self, from: encodedBuild) {
+                builds.append(decodedBuild)
+            }
+        }
+        return builds
+    }
+    
     private func isKeyPresent(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }
