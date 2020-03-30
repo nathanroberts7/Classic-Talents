@@ -33,7 +33,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
     private enum Constants {
         static let itemsPerRow: CGFloat = 4
         static let cellSpacing: CGFloat = 10
-        static let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 50.0, left: 30.0, bottom: 50.0, right: 30.0)
+        static let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 12.0, left: 30.0, bottom: 50.0, right: 30.0)
         static let cellIdentifier: String = "talent"
         static let maxCellIndex: Int = 27
         static let maxRowIndex: Int = 6

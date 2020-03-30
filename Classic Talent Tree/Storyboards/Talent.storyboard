@@ -24,8 +24,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0OC-fG-p6j">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="827"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-sl-ITi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="827"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-sl-ITi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="783"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mZd-AC-eWA">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -94,7 +94,7 @@
                             <constraint firstItem="rFs-xy-Thn" firstAttribute="top" secondItem="0OC-fG-p6j" secondAttribute="bottom" id="VB2-Jb-61P"/>
                             <constraint firstAttribute="trailing" secondItem="U2T-sl-ITi" secondAttribute="trailing" id="VXK-Ty-Eg1"/>
                             <constraint firstAttribute="trailing" secondItem="rFs-xy-Thn" secondAttribute="trailing" id="YY5-Ow-4Cv"/>
-                            <constraint firstItem="U2T-sl-ITi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dTM-o2-3ve"/>
+                            <constraint firstItem="U2T-sl-ITi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dTM-o2-3ve"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rFs-xy-Thn" secondAttribute="bottom" id="hg2-K9-azv"/>
                             <constraint firstItem="rFs-xy-Thn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tRi-so-OBs"/>
                             <constraint firstItem="0OC-fG-p6j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tWM-LA-mzh"/>
