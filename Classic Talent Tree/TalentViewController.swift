@@ -61,7 +61,7 @@ class TalentViewController: UIViewController, UICollectionViewDelegate, UICollec
         updateCellAvailability(forRow: 0)
         
         // Load Spec
-        guard loadSpec else { return }
+        guard loadSpec, !(loadSpecPoints.count == 1 && loadSpecPoints[0] == 0) else { loadSpec = false; return }
         loadSpec(points: loadSpecPoints)
     }
     

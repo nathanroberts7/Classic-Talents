@@ -19,6 +19,8 @@ class TabViewController: UITabBarController {
         static let classMenuIcon: String = "menu-icon"
         static let settingsMenuIcon: String = "settings-icon"
         static let maxPoints: Int = 51
+        static let lastVistedClassDefault: String = "lastVistedClassDefault"
+        static let defaultClass: String = "mage"
     }
     
     private var classMenuView: RHSideButtons?
@@ -60,7 +62,7 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
         guard let talentData = TalentData.data else { preconditionFailure() }
         tabBar.tintColor = .white
-        currentClass = talentData.classes.first(where: { $0.name.lowercased() == "druid" })
+        currentClass = talentData.classes.first(where: { $0.name.lowercased() == getLastVistedClass() })
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -118,6 +120,15 @@ class TabViewController: UITabBarController {
             viewController.loadSpecPoints = specPoints[index]
         }
     }
+    
+    private func saveLastVisitedClass(className: String) {
+        UserDefaults.standard.set(className, forKey: Constants.lastVistedClassDefault)
+    }
+    
+    private func getLastVistedClass() -> String {
+        let className = UserDefaults.standard.string(forKey: Constants.lastVistedClassDefault) ?? Constants.defaultClass
+        return className.lowercased()
+    }
 }
 
 extension TabViewController: RHSideButtonsDelegate {
@@ -139,6 +150,7 @@ extension TabViewController: RHSideButtonsDelegate {
         guard let talentData = TalentData.data else { return }
         reset()
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == className })
+        saveLastVisitedClass(className: className)
     }
     
     private func accessSettings(index: Int) {
