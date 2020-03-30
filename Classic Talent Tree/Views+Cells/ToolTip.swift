@@ -88,10 +88,10 @@ class ToolTip: UIView {
         // Determine if the tool tip needs to be below/above the cell
         let distanceToBottom = UIScreen.main.bounds.height - cellFrame.maxY
         let yValue: CGFloat
-        if distanceToBottom > contentView.frame.height + Constants.spacer * 10 {
-           yValue = cellFrame.maxY + Constants.spacer + cellFrame.height/2
+        if distanceToBottom > contentView.frame.height + cellFrame.height + Constants.spacer * 10 {
+           yValue = cellFrame.maxY + Constants.spacer * 5
         } else {
-           yValue = cellFrame.minY - Constants.spacer * 2 - cellFrame.height
+           yValue = cellFrame.minY - Constants.spacer * 6 - cellFrame.height
         }
         frame = CGRect(x: Constants.xValue, y: yValue, width: Constants.width, height: contentView.frame.height)
     }
