@@ -65,6 +65,11 @@ class TabViewController: UITabBarController {
         currentClass = talentData.classes.first(where: { $0.name.lowercased() == getLastVistedClass() })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ReviewManager().showReviewPrompt()
+    }
+    
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         configureClassMenu()

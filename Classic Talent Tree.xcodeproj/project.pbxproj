@@ -16,6 +16,7 @@
 		814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8B24046B8500BD4D7E /* TalentCell.swift */; };
 		814C8F8F24046B8500BD4D7E /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8F8C24046B8500BD4D7E /* TalentViewController.swift */; };
 		818B16FB2407401E002AE55F /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818B16FA2407401E002AE55F /* TalentData.swift */; };
+		819270C7243A6FB00083A299 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819270C6243A6FB00083A299 /* ReviewManager.swift */; };
 		819F9B642403C19B00518FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B632403C19B00518FFB /* AppDelegate.swift */; };
 		819F9B662403C19B00518FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F9B652403C19B00518FFB /* SceneDelegate.swift */; };
 		819F9B6D2403C19C00518FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819F9B6C2403C19C00518FFB /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		814C8F8B24046B8500BD4D7E /* TalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentCell.swift; sourceTree = "<group>"; };
 		814C8F8C24046B8500BD4D7E /* TalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentViewController.swift; sourceTree = "<group>"; };
 		818B16FA2407401E002AE55F /* TalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentData.swift; sourceTree = "<group>"; };
+		819270C6243A6FB00083A299 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		819F9B602403C19B00518FFB /* Classic Talents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Talents.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819F9B632403C19B00518FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819F9B652403C19B00518FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				81A73AAA243022EB0096841F /* SettingsMenuDataSource.swift */,
 				81ED1A912430381400FE7F2E /* InfoViewController.swift */,
 				81ED1A9F243198CC00FE7F2E /* SavedBuildsViewController.swift */,
+				819270C6243A6FB00083A299 /* ReviewManager.swift */,
 				818B16FC2407A184002AE55F /* Configuration */,
 				818B16F824073FCB002AE55F /* Data */,
 				81AA405C241C6B6700F95846 /* Extensions */,
@@ -375,6 +378,7 @@
 				81A1BA5C242AF41800E0840B /* Classic+UIStackView.swift in Sources */,
 				81F9A9942406425F009D8E3E /* Talents.swift in Sources */,
 				814C44EB2408DB0C0062CA53 /* TabViewController.swift in Sources */,
+				819270C7243A6FB00083A299 /* ReviewManager.swift in Sources */,
 				81ED1A9E2431946100FE7F2E /* SavedBuild.swift in Sources */,
 				81ED1A9824306FE800FE7F2E /* Build.swift in Sources */,
 				814C8F8E24046B8500BD4D7E /* TalentCell.swift in Sources */,
